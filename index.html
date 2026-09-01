@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Luminote 公式サイト。ディスコグラフィ、オフボーカル音源の配布、仕事のご連絡先。">
+<title>Luminote | 公式サイト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#171320;          /* 夜の音楽室 */
+    --bg2:#1E1930;
+    --ivory:#EFE8DA;
+    --ivory-dim:#B9B0A0;
+    --brass:#D9B36C;       /* 譜面灯の真鍮 */
+    --line:rgba(239,232,218,0.16);
+    --card:rgba(255,255,255,0.04);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
+  body{
+    background:var(--bg);
+    background-image:radial-gradient(1000px 560px at 75% -10%, rgba(217,179,108,0.07), transparent 60%),
+                     radial-gradient(800px 500px at 0% 100%, rgba(120,110,180,0.07), transparent 55%);
+    color:var(--ivory);
+    font-family:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+    line-height:1.9;
+    font-size:15.5px;
+  }
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px 72px;}
+  .serif{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;}
+
+  /* ---- ヘッダー ---- */
+  header{padding:88px 0 56px;text-align:center;}
+  .wordmark{
+    font-family:'Cormorant Garamond','Shippori Mincho B1',serif;
+    font-size:clamp(40px,9vw,64px);
+    font-weight:500;
+    letter-spacing:0.14em;
+    color:var(--ivory);
+  }
+  .wordmark .accent{color:var(--brass);}
+  header .role{margin-top:10px;font-size:13px;letter-spacing:0.5em;color:var(--ivory-dim);text-indent:0.5em;}
+  .rule{width:110px;height:1px;background:linear-gradient(90deg,transparent,var(--brass),transparent);margin:26px auto 0;}
+
+  /* ---- ナビ ---- */
+  nav{margin-top:34px;text-align:center;}
+  nav a{
+    display:inline-block;color:var(--ivory-dim);text-decoration:none;
+    font-size:13px;letter-spacing:0.18em;padding:6px 16px;
+  }
+  nav a:hover,nav a:focus{color:var(--brass);}
+
+  /* ---- セクション ---- */
+  section{margin-top:76px;}
+  h2{
+    font-family:'Shippori Mincho B1',serif;
+    font-size:20px;font-weight:700;letter-spacing:0.12em;
+    color:var(--brass);
+    border-bottom:1px solid var(--line);
+    padding-bottom:12px;margin-bottom:26px;
+  }
+  h2 .en{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:0.3em;color:var(--ivory-dim);margin-left:14px;font-weight:500;}
+  p.note{color:var(--ivory-dim);font-size:14px;}
+
+  /* ---- ディスコグラフィ ---- */
+  .disc{display:grid;gap:16px;}
+  .disc-item{
+    display:flex;gap:18px;align-items:center;
+    background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+  }
+  .disc-item .art{
+    width:86px;height:86px;flex-shrink:0;border-radius:10px;
+    background:linear-gradient(135deg,#242038,#171320);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--brass);font-size:24px;
+  }
+  .disc-item h3{font-size:16px;letter-spacing:0.06em;margin-bottom:2px;}
+  .disc-item .date{font-size:12.5px;color:var(--ivory-dim);letter-spacing:0.08em;}
+  .dsp{margin-top:8px;}
+  .dsp a,.dsp span{
+    display:inline-block;font-size:12px;letter-spacing:0.06em;
+    border:1px solid var(--line);border-radius:999px;
+    padding:3px 14px;margin:2px 6px 2px 0;
+    color:var(--ivory-dim);text-decoration:none;
+  }
+  .dsp a:hover,.dsp a:focus{color:var(--brass);border-color:rgba(217,179,108,0.5);}
+  .coming{opacity:0.85;}
+
+  /* ---- オフボーカル配布 ---- */
+  .dl-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin-bottom:18px;
+  }
+  .dl-card h3{font-size:15.5px;color:var(--ivory);margin-bottom:6px;letter-spacing:0.05em;}
+  .terms{
+    background:rgba(0,0,0,0.22);border:1px solid var(--line);border-radius:14px;
+    padding:22px 26px;font-size:13.5px;
+  }
+  .terms h3{
+    font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--brass);
+    letter-spacing:0.1em;margin-bottom:12px;
+  }
+  .terms ol{padding-left:1.4em;}
+  .terms li{margin:7px 0;color:var(--ivory);}
+  .terms li::marker{color:var(--brass);}
+  .terms .fine{margin-top:14px;font-size:12.5px;color:var(--ivory-dim);}
+
+  /* ---- コンタクト ---- */
+  .contact{
+    text-align:center;background:var(--card);border:1px solid var(--line);
+    border-radius:14px;padding:30px 24px;
+  }
+  .contact .mail{
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;letter-spacing:0.08em;color:var(--brass);
+    word-break:break-all;
+  }
+  .contact p{font-size:13.5px;color:var(--ivory-dim);margin-top:10px;}
+
+  /* ---- リンク ---- */
+  .links{text-align:center;margin-top:26px;}
+  .links a{
+    display:inline-block;margin:4px 8px;padding:8px 26px;
+    border:1px solid var(--line);border-radius:999px;
+    color:var(--ivory);text-decoration:none;font-size:13.5px;letter-spacing:0.12em;
+  }
+  .links a:hover,.links a:focus{color:var(--brass);border-color:rgba(217,179,108,0.5);}
+
+  footer{
+    margin-top:84px;border-top:1px solid var(--line);
+    padding-top:24px;text-align:center;
+    color:var(--ivory-dim);font-size:12px;letter-spacing:0.14em;
+  }
+  a:focus-visible{outline:2px solid var(--brass);outline-offset:2px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">Lumi<span class="accent">note</span></div>
+    <div class="role">M U S I C</div>
+    <div class="rule"></div>
+    <nav>
+      <a href="#discography">Discography</a>
+      <a href="#offvocal">Off-Vocal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ═══ ディスコグラフィ ═══ -->
+  <section id="discography">
+    <h2>ディスコグラフィ<span class="en">DISCOGRAPHY</span></h2>
+    <div class="disc">
+
+      <!-- ▼ リリースが決まったら、このブロックを複製して使う ▼ -->
+      <div class="disc-item coming">
+        <div class="art">♪</div>
+        <div>
+          <h3>1st Single — 準備中</h3>
+          <div class="date">Coming soon</div>
+          <div class="dsp">
+            <span>Spotify</span><span>Apple Music</span><span>YouTube Music</span><span>その他各配信サービス</span>
+          </div>
+        </div>
+      </div>
+      <!-- ▲ ここまで ▲ -->
+
+    </div>
+    <p class="note" style="margin-top:14px;">各配信サービスへのリンクは、リリースごとにこちらに掲載します。</p>
+  </section>
+
+  <!-- ═══ オフボーカル配布 ═══ -->
+  <section id="offvocal">
+    <h2>オフボーカル音源の配布<span class="en">OFF-VOCAL</span></h2>
+    <div class="dl-card">
+      <h3>歌ってみた・演奏してみた用の音源について</h3>
+      <p class="note">
+        配信中の楽曲のオフボーカル（カラオケ）音源を、このページで無料配布します。
+        下記の利用条件の範囲で、どなたでもご利用いただけます。
+        音源は各楽曲のリリース後、順次こちらに追加します。
+      </p>
+    </div>
+    <div class="terms">
+      <h3>─ 利用条件 ─</h3>
+      <ol>
+        <li>歌唱・演奏などを重ねた動画・音声作品の制作と、動画サイト・SNS等への投稿にご利用いただけます。収益化を伴う投稿も可能です。</li>
+        <li>作品の概要欄等に、クレジットとして「音源：Luminote」の表記と、本サイトまたは元動画へのリンクをお願いします。</li>
+        <li>音源そのものの再配布・販売、および音楽配信サービス（Spotify・Apple Music等）への登録はできません。</li>
+        <li>公序良俗に反する内容、第三者の権利を侵害する内容、特定の個人・団体への攻撃を目的とする内容へのご利用はお断りします。</li>
+        <li>上記以外の利用（企業・商業案件での利用、放送での利用など）は、下記の連絡先まで事前にご相談ください。</li>
+      </ol>
+      <p class="fine">※ 本条件は予告なく改定することがあります。改定前の投稿には、投稿時点の条件が適用されます。</p>
+    </div>
+  </section>
+
+  <!-- ═══ コンタクト ═══ -->
+  <section id="contact">
+    <h2>お仕事のご連絡<span class="en">CONTACT</span></h2>
+    <div class="contact">
+      <div class="mail">luminote.music.jp@gmail.com</div>
+      <p>楽曲制作のご依頼・音源利用のご相談などは、こちらのアドレスまでお願いいたします。<br>内容によってはお返事までお時間をいただく場合があります。</p>
+    </div>
+    <div class="links">
+      <a href="#" rel="noopener">YouTube</a>
+      <a href="#" rel="noopener">X</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Luminote
+  </footer>
+
+</div>
+</body>
+</html>
