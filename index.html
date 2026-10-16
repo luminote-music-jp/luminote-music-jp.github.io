@@ -355,6 +355,14 @@ h2.sec + .ornament{margin:14px auto 34px;}
 .p-body li.award::before{content:"";width:8px;height:8px;top:14px;left:3px;border-radius:50%;
   background:radial-gradient(circle,#FFF4D6,var(--brass));box-shadow:0 0 10px rgba(243,217,162,.9);}
 
+
+.p-body p{margin-top:16px;font-size:15px;line-height:2.05;color:var(--ivory);}
+.p-body p.lead{margin-top:0;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.04em;color:var(--brass-hi);text-wrap:balance;
+  padding-bottom:12px;border-bottom:1px solid var(--line-brass);}
+.p-body b.hl{font-weight:700;color:var(--brass-hi);font-family:'Shippori Mincho B1',serif;text-shadow:0 0 12px rgba(243,217,162,.45);}
+.p-body b.hl2{font-weight:700;color:var(--moon);text-shadow:0 0 12px rgba(168,194,232,.5);}
+.p-body .pledge{display:block;margin-top:12px;padding:12px 16px;border-radius:10px;border-left:3px solid var(--rose);
+  background:linear-gradient(90deg,rgba(215,160,180,.10),rgba(215,160,180,0));color:var(--ivory);}
 /* ---- オフボーカル（畳み） ---- */
 details.fold{border-radius:16px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(36,30,58,.5),rgba(23,19,32,.45));overflow:hidden;}
 details.fold summary{list-style:none;cursor:pointer;padding:22px 28px;display:flex;align-items:center;gap:16px;}
@@ -636,14 +644,10 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
       </div>
       <div class="p-body">
         <p class="lead">Luminote（ルミノート）です。作詞・作曲・編曲をしています。</p>
-        <p class="lead" style="margin-top:10px">2026年に、Luminoteとしての活動を始めました。</p>
-        <h3>お受けしている仕事</h3>
-        <ul>
-          <li>歌もの・BGMの作曲</li>
-          <li>作詞</li>
-          <li>編曲・オーケストレーション</li>
-          <li>楽曲提供</li>
-        </ul>
+        <p><b class="hl">1歳</b>からピアノを弾いてきた、作曲歴<b class="hl">20年以上</b>の職業作曲家です。全国規模の作曲コンテストで<b class="hl2">最優秀賞</b>、編曲賞、部門賞などを受賞し、10代から歌ものやBGMの委嘱作曲を続けてきました。これまでにゲーム・アニメの主題歌や劇中歌、ゲーム音楽、YouTuber・VTuber・アーティストへの楽曲提供、アーティスト自作曲の編曲やオーケストレーション、校歌の作詞・作曲を担当してきました。作家名を出さない形での楽曲提供（いわゆるゴーストライティング）も行ってきました。作曲・編曲は<b class="hl">150曲</b>、採譜は<b class="hl">200曲</b>を超えます。</p>
+        <p>得意とするのは、女性ボーカルのアニメソングやJ-POP、ゲームや映像の劇伴です。絶対音感を持ち、ピアノ講師として教えていた時期もあります。作詞から作曲・編曲・演奏・ミックス・マスタリングまでを一人で行い、そのまま配信できる音源に仕上げます。</p>
+        <p>2026年、依頼ではなく作りたい音楽を自分の名前で届けるため、レーベル「POIKILIA」を立ち上げ、Luminoteとしての活動を始めました。現在はどの事務所にも所属せず、フリーで活動しています。<span class="pledge">Luminoteの曲は、詞もメロディもアレンジも、AIを使わずにすべて自分の手で書いています。</span></p>
+        <p><span id="pf-rel">1作目「藍色エクリプス」を10月23日に配信し、</span>新曲は今後も随時発表していきます。歌い手さんやVTuber・VSingerの方、イラストレーターの方とも、これから交流を広げていきたいと思っています。</p>
       </div>
     </div>
   </section>
@@ -818,6 +822,7 @@ var RELEASE = {
         ? '<a class="btn" href="'+esc(RELEASE.listenUrl)+'" target="_blank" rel="noopener">♪ 聴く</a>'
         : '<span class="btn wait">配信中です</span>';
       note.textContent = '各配信サービスで配信中です。';
+      var pr=document.getElementById('pf-rel'); if(pr) pr.textContent='2026年10月23日に1作目「藍色エクリプス」を配信しました。';
     }else if(now >= tStart && RELEASE.presaveUrl){
       cta.innerHTML = '<a class="btn" href="'+esc(RELEASE.presaveUrl)+'" target="_blank" rel="noopener">事前保存（予約）する</a>';
       note.textContent = '配信日に、ライブラリへ自動で追加されます。';
