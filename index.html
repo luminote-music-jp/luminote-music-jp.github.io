@@ -789,16 +789,16 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 var RELEASE = {
   presaveStart: '2026-10-09T00:00:00+09:00',   // 予約（事前保存）受付の開始
   releaseAt:    '2026-10-23T00:00:00+09:00',   // 配信開始
-  presaveUrl:   '',                            // 予約リンク（10/9に貼る）
-  // 配信開始後のリンク（10/23に貼る）。URLが空のものは名前だけ表示する
+  presaveUrl:   '',                            // 予約リンク（配信開始後は使わない）
+  // 配信開始後のリンク（2026-10-23 確認済み）。URLが空のものは名前だけ表示する
   dsp: [
-    {name:'Spotify',       url:''},
-    {name:'Apple Music',   url:''},
-    {name:'YouTube Music', url:''},
-    {name:'Amazon Music',  url:''},
-    {name:'LINE MUSIC',    url:''}
+    {name:'Spotify',       url:'https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew'},
+    {name:'Apple Music',   url:'https://music.apple.com/jp/album/indigo-eclipse-feat-gumi-single/6817728375?i=6817728399'},
+    {name:'YouTube Music', url:'https://music.youtube.com/watch?v=RNbt59LWqsg'},
+    {name:'Amazon Music',  url:'https://music.amazon.co.jp/albums/B0HLLBKMJM?trackAsin=B0HLL6W3ZC'},
+    {name:'LINE MUSIC',    url:'https://music.line.me/webapp/track/mt0000000027a9fa25'}
   ],
-  listenUrl: ''                                // 配信後の「聴く」ボタンの行き先（リンク集ページなど）
+  listenUrl: 'https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew'   // 「♪ 聴く」ボタンの行き先。LinkCoreのURLが取れたらここを差し替える
 };
 
 (function(){
