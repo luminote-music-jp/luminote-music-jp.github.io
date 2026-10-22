@@ -360,7 +360,7 @@ h2.sec + .ornament{margin:14px auto 34px;}
 .p-body p.lead{margin-top:0;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.04em;color:var(--brass-hi);text-wrap:balance;
   padding-bottom:12px;border-bottom:1px solid var(--line-brass);}
 .p-body b.hl{font-weight:700;color:var(--brass-hi);font-family:'Shippori Mincho B1',serif;text-shadow:0 0 12px rgba(243,217,162,.45);}
-.p-body b.hl2{font-weight:700;color:var(--moon);text-shadow:0 0 12px rgba(168,194,232,.5);}
+.p-body b.hl2{font-weight:700;color:var(--moon);text-shadow:0 0 12px rgba(168,194,232,.5);}.pf-b{font-weight:700;color:inherit;}
 .p-body .pledge{display:block;margin-top:12px;padding:12px 16px;border-radius:10px;border-left:3px solid var(--rose);
   background:linear-gradient(90deg,rgba(215,160,180,.10),rgba(215,160,180,0));color:var(--ivory);}
 /* ---- オフボーカル（畳み） ---- */
@@ -381,7 +381,7 @@ details.fold summary:hover .tt{color:var(--brass-hi);}
 .terms ol{padding-left:1.4em;}
 .terms li{margin:7px 0;}
 .terms li::marker{color:var(--brass);}
-.terms .fine{margin-top:14px;font-size:12.5px;color:var(--ivory-dim);}
+.terms .fine{margin-top:14px;font-size:12.5px;color:var(--ivory-dim);}.dl-list{list-style:none;margin:18px 0 0;padding:0;}.dl-list li{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:16px 20px;}.dl-list .dl-tx{display:flex;flex-direction:column;gap:3px;}.dl-list .dl-tx b{font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.04em;}.dl-list .dl-tx small{font-size:12.5px;color:var(--ivory-dim);}.dl-list .btn{margin-top:0;}.lyrics{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:26px 30px;}.lyrics .ly-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line);}.lyrics .ly-head b{font-family:'Shippori Mincho B1',serif;font-size:18px;letter-spacing:.08em;color:#F3D9A2;}.lyrics .ly-head span{font-size:12.5px;color:var(--ivory-dim);letter-spacing:.06em;}.lyrics .stanza{font-family:'Shippori Mincho B1',serif;font-size:15.5px;line-height:2.1;letter-spacing:.04em;margin:0 0 22px;color:var(--ivory);}.lyrics .ly-credit{margin-top:6px;font-size:12.5px;color:var(--ivory-dim);}@media(max-width:640px){.lyrics{padding:20px 18px;}.lyrics .stanza{font-size:14.5px;}}.report{margin-top:18px;background:linear-gradient(135deg,rgba(217,179,108,.10),rgba(168,194,232,.08));border:1px solid rgba(217,179,108,.45);border-radius:14px;padding:20px 24px;font-size:14px;}.report h3{font-family:'Shippori Mincho B1',serif;font-size:16px;color:var(--brass);letter-spacing:.06em;margin-bottom:10px;}.report p{margin:6px 0;}.report a{color:#F3D9A2;text-decoration:underline;text-underline-offset:3px;}.report .sub{font-size:13px;color:var(--ivory-dim);}
 
 /* ---- コンタクト ---- */
 .contact{text-align:center;}
@@ -540,6 +540,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <a class="mark" href="#top">Luminote</a>
     <nav class="navlinks" aria-label="ページ内リンク">
       <a href="#release">New Single</a>
+      <a href="#lyrics">Lyrics</a>
       <a href="#discography">Discography</a>
       <a href="#profile">Profile</a>
       <a href="#offvocal">Off-Vocal</a>
@@ -562,6 +563,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <div class="ornament" aria-hidden="true"><i></i></div>
     <nav class="inline" aria-label="ページ内リンク">
       <a href="#release">New Single</a>
+      <a href="#lyrics">Lyrics</a>
       <a href="#discography">Discography</a>
       <a href="#profile">Profile</a>
       <a href="#offvocal">Off-Vocal</a>
@@ -598,6 +600,31 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
       <p class="rel-note" id="rel-note"></p>
       <div class="dsp" id="dsp"></div>
     </div>
+  </section>
+
+  <!-- ═══ 歌詞 ═══ -->
+  <section id="lyrics" class="reveal">
+    <details class="fold">
+      <summary>
+        <span class="ic music" aria-hidden="true">♪</span>
+        <span class="tt">歌詞<small>藍色エクリプス (feat. GUMI)　作詞・作曲・編曲：Luminote</small></span>
+        <span class="chev" aria-hidden="true"></span>
+      </summary>
+      <div class="fold-body">
+        <div class="lyrics">
+          <div class="ly-head"><b>藍色エクリプス</b><span>Indigo Eclipse ／ Luminote feat. GUMI</span></div>
+          <p class="stanza">藍色の空を　君と見た<br>月が欠けてゆくの</p>
+          <p class="stanza">静かな夜、今<br>君の声がする<br>口を手で隠す　癖までも覚えてる<br>目を閉じれば、まだ<br>笑う君がいる<br>今思えば　笑うツボは　よくわかんない</p>
+          <p class="stanza">迷子のプレゼントと<br>また　言えなかったゴメンナサイが<br>月の裏で　埃かぶる</p>
+          <p class="stanza">届かない光に　背伸びした<br>私の空に　影が堕ちてゆく<br>好きでした、なんて　遅刻だね<br>朽ちた月も綺麗</p>
+          <p class="stanza">街のビルの窓<br>映る君を見た<br>後ろ姿だけで　わかってしまったの<br>笑い方までも<br>今も変わらない<br>ガラス一枚ぶん　遠い人になった</p>
+          <p class="stanza">ピカピカのピアスで<br>まだ　君と撮ったツーショットが<br>非表示なのに　今夜も光る</p>
+          <p class="stanza">さよならも言えず　終わらせた<br>それでも空は　明けてゆくんだね<br>幸せに、なんて　言わないわ<br>朝の月に笑う</p>
+          <p class="ly-credit">作詞・作曲・編曲：Luminote　歌：GUMI　©2026 Luminote / POIKILIA</p>
+          <p class="ly-credit">歌詞の転載は、「作詞：Luminote」のクレジットと本サイトへのリンクをつけてください。</p>
+        </div>
+      </div>
+    </details>
   </section>
 
   <!-- 五線の帯 -->
@@ -644,7 +671,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
       </div>
       <div class="p-body">
         <p class="lead">Luminote（ルミノート）です。作詞・作曲・編曲をしています。</p>
-        <p><b class="hl">1歳</b>からピアノを弾いてきた、作曲歴<b class="hl">20年以上</b>の職業作曲家です。全国規模の作曲コンテストで<b class="hl2">最優秀賞</b>、編曲賞、部門賞などを受賞し、10代から歌ものやBGMの委嘱作曲を続けてきました。これまでにゲーム・アニメの主題歌や劇中歌、ゲーム音楽、YouTuber・VTuber・アーティストへの楽曲提供、アーティスト自作曲の編曲やオーケストレーション、校歌の作詞・作曲を担当してきました。作家名を出さない形での楽曲提供（いわゆるゴーストライティング）も行ってきました。現在のお仕事は、すべてLuminoteの名前でお受けしています。作曲・編曲は<b class="hl">150曲</b>、採譜は<b class="hl">200曲</b>を超えます。</p>
+        <p>1歳からピアノを弾いてきた、作曲歴20年以上の職業作曲家です。全国規模の作曲コンテストで<b class="hl2">最優秀賞</b>、編曲賞、部門賞などを受賞し、10代から歌ものやBGMの委嘱作曲を続けてきました。これまでにゲーム・アニメの主題歌や劇中歌、ゲーム音楽、YouTuber・VTuber・アーティストへの楽曲提供、アーティスト自作曲の編曲やオーケストレーション、校歌の作詞・作曲を担当してきました。作家名を出さない形での楽曲提供（いわゆるゴーストライティング）も行ってきました。現在のお仕事は、すべてLuminoteの名前でお受けしています。作曲・編曲は150曲、採譜は200曲を超えます。</p>
         <p>得意とするのは、女性ボーカルのアニメソングやJ-POP、ゲームや映像の劇伴です。絶対音感を持ち、ピアノ講師として教えていた時期もあります。作詞から作曲・編曲・演奏・ミックス・マスタリングまでを一人で行い、そのまま配信できる音源に仕上げます。</p>
         <p>2026年、依頼ではなく作りたい音楽を自分の名前で届けるため、レーベル「POIKILIA」を立ち上げ、Luminoteとしての活動を始めました。現在はどの事務所にも所属せず、フリーで活動しています。<span class="pledge">Luminoteの曲は、詞もメロディもアレンジも、AIを使わずにすべて自分の手で書いています。</span></p>
         <p><span id="pf-rel">1作目「藍色エクリプス」を10月23日に配信し、</span>新曲は今後も随時発表していきます。歌い手さんやVTuber・VSingerの方、イラストレーターの方とも、これから交流を広げていきたいと思っています。</p>
@@ -668,6 +695,12 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
           下記の利用条件の範囲で、どなたでもご利用いただけます。
           音源は各楽曲のリリース後、順次こちらに追加します。
         </p>
+        <ul class="dl-list">
+          <li>
+            <span class="dl-tx"><b>藍色エクリプス (feat. GUMI)</b><small>オフボーカル ／ MP3 320kbps ／ 2026-10-23 配信</small></span>
+            <a class="btn" href="audio/indigo_eclipse_offvocal.mp3" download>♩ ダウンロード</a>
+          </li>
+        </ul>
         <div class="terms">
           <h3>─ 利用条件 ─</h3>
           <ol>
@@ -676,8 +709,14 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
             <li>音源そのものの再配布・販売、および音楽配信サービス（Spotify・Apple Music等）への登録はできません。</li>
             <li>公序良俗に反する内容、第三者の権利を侵害する内容、特定の個人・団体への攻撃を目的とする内容へのご利用はお断りします。</li>
             <li>上記以外の利用（企業・商業案件での利用、放送での利用など）は、下記の連絡先まで事前にご相談ください。</li>
+            <li>YouTubeに投稿すると、「著作権の申し立て」が自動で表示されることがあります。楽曲を盗用の追跡のために登録しているためで、動画が消されたりチャンネルに影響が出たりすることはありません。ご自身で収益化したい場合は、YouTubeの画面から「異議申し立て」をしてください。確認のうえ解除します。</li>
           </ol>
           <p class="fine">※ 本条件は予告なく改定することがあります。改定前の投稿には、投稿時点の条件が適用されます。</p>
+        </div>
+        <div class="report">
+          <h3>♪ 歌ってくれたら、ぜひ聴かせてください</h3>
+          <p>投稿したら、X の <a href="https://x.com/luminote_music" target="_blank" rel="noopener">@luminote_music</a> にリプライ（DMでも大丈夫です）でURLを送ってください。全部、必ず聴きに行きます！</p>
+          <p class="sub">（楽曲のコラボや有償のご案件のご相談をさせていただくきっかけにもなればと思っています🎵 たとえば、新曲のメインボーカルや、非公開コンペに出す仮歌など。）</p>
         </div>
       </div>
     </details>
