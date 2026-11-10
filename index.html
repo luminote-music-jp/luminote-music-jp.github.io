@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="description" content="Luminote 公式サイト。新曲「レインボー★ユニコーン♪」（11月21日配信）と「弾ける衝動」（11月28日配信）、新着情報、ディスコグラフィ、歌詞、プロフィール、オフボーカル音源の配布、仕事のご連絡先。">
 <meta name="theme-color" content="#171320">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171320'/%3E%3Cellipse cx='25' cy='45' rx='9.5' ry='7' transform='rotate(-22 25 45)' fill='%23F3D9A2'/%3E%3Crect x='31.5' y='12' width='3.6' height='33' rx='1.5' fill='%23F3D9A2'/%3E%3Cpath d='M35 12c4 7 13 9 11 21c-1-6-6-9-11-10z' fill='%23A8C2E8'/%3E%3C/svg%3E">
 <title>Luminote | 公式サイト</title>
 <!-- ---- 2026-11 追加：Twitter・LINE などでリンクを貼ったときのカード（OGP） ---- -->
 <link rel="canonical" href="https://luminote-music.com/">
@@ -834,7 +835,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <div class="ornament" aria-hidden="true"><i></i></div>
     <div class="shelf">
       <div class="slot reveal d1">
-        <a href="#release" class="cover" style="display:block"><img src="img/indigo-eclipse.jpg" alt="藍色エクリプス" loading="lazy"></a>
+        <a href="#lyrics" class="cover" style="display:block"><img src="img/indigo-eclipse.jpg" alt="藍色エクリプス（歌詞へ）" loading="lazy"></a>
         <div class="no">No. 01</div>
         <h3>藍色エクリプス</h3>
         <div class="meta">Indigo Eclipse ／ 2026.10.23 配信</div>
@@ -1301,6 +1302,15 @@ var RELEASE = {
   document.querySelectorAll('details').forEach(function(d){
     d.addEventListener('toggle',function(){ if(d.open){ var s=d.closest('section'); gc('open-'+(s?s.id:'x')); } });
   });
+})();
+</script>
+<script>
+/* ---- 2026-11 追加：「#lyrics」へのリンク（目次・ディスコグラフィの No.01）で来たら、歌詞の畳みを開く ---- */
+(function(){
+  var d=document.querySelector('#lyrics details'); if(!d) return;
+  function openLy(){ if(!d.open){ d.open=true; } }
+  document.addEventListener('click',function(e){ var a=e.target && e.target.closest && e.target.closest('a[href="#lyrics"]'); if(a){ openLy(); } });
+  if(location.hash==='#lyrics'){ openLy(); }
 })();
 </script>
 </body>
