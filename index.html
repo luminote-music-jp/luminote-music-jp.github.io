@@ -20,6 +20,8 @@
 <meta property="og:locale" content="ja_JP">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@luminote_music">
+<!-- ---- 2026-11 追加：アクセスの計測（GoatCounter・cookie なし。集計は https://luminote-music.goatcounter.com/） ---- -->
+<script data-goatcounter="https://luminote-music.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
@@ -1269,6 +1271,29 @@ var RELEASE = {
     sec.classList.toggle('is-en',en);
     btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
   }); });
+})();
+</script>
+<script>
+/* ---- 2026-11 追加：押されたものを GoatCounter に送る（外へのリンク・メール・言語の切り替え・畳みを開いた回数） ---- */
+(function(){
+  function gc(path,title){ try{ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:path, title:title||path, event:true}); } }catch(e){} }
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t || !t.closest) return;
+    var a=t.closest('a[href]');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      if(/^mailto:/i.test(h)){ gc('link-mail','メール'); }
+      else if(/^https?:/i.test(h)){
+        try{ var u=new URL(h, location.href); if(u.hostname!==location.hostname){ gc('link-'+u.hostname, (a.textContent||'').replace(/\s+/g,' ').trim().slice(0,80) || u.hostname); } }catch(_){}
+      }
+      return;
+    }
+    var b=t.closest('.lang-switch button');
+    if(b){ var s=b.closest('section'); gc('lang-'+(s?s.id:'x')+'-'+b.getAttribute('data-lang')); }
+  });
+  document.querySelectorAll('details').forEach(function(d){
+    d.addEventListener('toggle',function(){ if(d.open){ var s=d.closest('section'); gc('open-'+(s?s.id:'x')); } });
+  });
 })();
 </script>
 </body>
