@@ -567,6 +567,17 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 #profile.is-en .p-en{display:block;}
 #profile.is-en .pe{display:inline;}
 #profile .p-en p{line-height:1.85;}
+/* ---- 2026-11 追加：歌詞の 日本語／Romaji／English 切り替え ---- */
+.tt .tt-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:.92em;letter-spacing:.06em;color:var(--moon);margin-left:4px;}
+.lyrics .ly-switch{justify-content:flex-start;margin:0 0 22px;flex-wrap:wrap;}
+.lyrics .ly-switch button[data-lang="ro"]{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.1em;}
+.lyrics .ly-ro,.lyrics .ly-en{display:none;}
+.lyrics.is-ro .ly-ja,.lyrics.is-en .ly-ja{display:none;}
+.lyrics.is-ro .ly-ro,.lyrics.is-en .ly-en{display:block;}
+.lyrics .ly-ro .stanza{font-family:'Zen Kaku Gothic New',sans-serif;font-size:15px;line-height:2;letter-spacing:.02em;}
+.lyrics .ly-en .stanza{font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.75;letter-spacing:.01em;}
+.lyrics .ly-note{font-size:13px;line-height:1.8;color:var(--ivory-dim);margin:-6px 0 18px;padding-left:1em;text-indent:-1em;}
+@media(max-width:640px){.lyrics .ly-en .stanza{font-size:17px;}.lyrics .ly-ro .stanza{font-size:14px;}.lyrics .ly-switch{gap:6px;}.lyrics .ly-switch button{padding:7px 13px;}}
 </style>
 </head>
 <body class="no-js">
@@ -724,12 +735,18 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <details class="fold">
       <summary>
         <span class="ic music" aria-hidden="true">♪</span>
-        <span class="tt">歌詞<small>藍色エクリプス (feat. GUMI)　作詞・作曲・編曲：Luminote</small></span>
+        <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small>藍色エクリプス (feat. GUMI)　作詞・作曲・編曲：Luminote　／　日本語・Romaji・English</small></span>
         <span class="chev" aria-hidden="true"></span>
       </summary>
       <div class="fold-body">
         <div class="lyrics">
           <div class="ly-head"><b>藍色エクリプス</b><span>Indigo Eclipse ／ Luminote feat. GUMI</span></div>
+          <div class="lang-switch ly-switch" role="group" aria-label="歌詞の言語 / Lyrics language">
+            <button type="button" class="on" data-lang="ja" aria-pressed="true">日本語</button>
+            <button type="button" data-lang="ro" aria-pressed="false">Romaji</button>
+            <button type="button" data-lang="en" aria-pressed="false">English</button>
+          </div>
+          <div class="ly-ja">
           <p class="stanza">藍色の空を　君と見た<br>月が欠けてゆくの</p>
           <p class="stanza">静かな夜、今<br>君の声がする<br>口を手で隠す　癖までも覚えてる<br>目を閉じれば、まだ<br>笑う君がいる<br>今思えば　笑うツボは　よくわかんない</p>
           <p class="stanza">迷子のプレゼントと<br>また　言えなかったゴメンナサイが<br>月の裏で　埃かぶる</p>
@@ -739,6 +756,30 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
           <p class="stanza">さよならも言えず　終わらせた<br>それでも空は　明けてゆくんだね<br>幸せに、なんて　言わないわ<br>朝の月に笑う</p>
           <p class="ly-credit">作詞・作曲・編曲：Luminote　歌：GUMI　©2026 Luminote / POIKILIA</p>
           <p class="ly-credit">歌詞の転載は、「作詞：Luminote」のクレジットと本サイトへのリンクをつけてください。</p>
+          </div>
+          <div class="ly-ro" lang="ja-Latn">
+          <p class="stanza">aiiro no sora wo kimi to mita<br>tsuki ga kakete yuku no</p>
+          <p class="stanza">shizuka na yoru, ima<br>kimi no koe ga suru<br>kuchi wo te de kakusu kuse made mo oboeteru<br>me wo tojireba, mada<br>warau kimi ga iru<br>ima omoeba warau tsubo wa yoku wakannai</p>
+          <p class="stanza">maigo no purezento to<br>mata ienakatta gomennasai ga<br>tsuki no ura de hokori kaburu</p>
+          <p class="stanza">todokanai hikari ni senobi shita<br>watashi no sora ni kage ga ochite yuku<br>suki deshita, nante chikoku da ne<br>kuchita tsuki mo kirei</p>
+          <p class="stanza">machi no biru no mado<br>utsuru kimi wo mita<br>ushirosugata dake de wakatte shimatta no<br>waraikata made mo<br>ima mo kawaranai<br>garasu ichimai bun tooi hito ni natta</p>
+          <p class="stanza">pikapika no piasu de<br>mada kimi to totta tsuushotto ga<br>hihyouji na no ni kon'ya mo hikaru</p>
+          <p class="stanza">sayonara mo iezu owaraseta<br>soredemo sora wa akete yuku n da ne<br>shiawase ni, nante iwanai wa<br>asa no tsuki ni warau</p>
+          <p class="ly-credit">Official romanization by Luminote.　Lyrics, music &amp; arrangement: Luminote　Vocals: GUMI　©2026 Luminote / POIKILIA</p>
+          <p class="ly-credit">If you share the lyrics, please credit "Lyrics: Luminote" and link to this site.</p>
+          </div>
+          <div class="ly-en" lang="en">
+          <p class="stanza">I watched the indigo sky with you<br>And piece by piece, the moon is slipping away</p>
+          <p class="stanza">The night is quiet, and now<br>I can hear your voice<br>I even remember how you cover your mouth with your hand<br>When I close my eyes, you're still there,<br>Laughing<br>Now that I think about it, I never really understood what made you laugh</p>
+          <p class="stanza">The gift I never gave you<br>And the "I'm sorry" that, once again, I couldn't say<br>Gather dust on the far side of the moon</p>
+          <p class="stanza">I stretched up on tiptoe toward a light I could never reach<br>And a shadow is falling across my sky<br>"I was in love with you" — a little late to say that now<br>Even crumbling, the moon is beautiful*</p>
+          <p class="stanza">In a building's window downtown<br>I saw your reflection<br>I knew it was you from your back alone<br>Even the way you laugh<br>Hasn't changed at all<br>Only one pane of glass between us, yet you're on the far side now</p>
+          <p class="stanza">That photo of the two of us, me in my shiny earrings — I still have it<br>It's hidden, and yet tonight it shines again</p>
+          <p class="stanza">I couldn't even say goodbye — I ended it by myself, in silence<br>And still, the sky is growing brighter<br>"Be happy" — no, I won't say that<br>I smile at the morning moon</p>
+          <p class="ly-note">* In Japan, "The moon is beautiful, isn't it?" (Tsuki ga kirei desu ne) is widely known as an indirect way of saying "I love you."</p>
+          <p class="ly-credit">Official English translation by Luminote.　Lyrics, music &amp; arrangement: Luminote　Vocals: GUMI　©2026 Luminote / POIKILIA</p>
+          <p class="ly-credit">If you share the lyrics or this translation, please credit "Lyrics: Luminote" and link to this site.</p>
+          </div>
         </div>
       </div>
     </details>
@@ -1145,6 +1186,17 @@ var RELEASE = {
   btns.forEach(function(b){ b.addEventListener('click',function(){
     var en=b.getAttribute('data-lang')==='en';
     sec.classList.toggle('is-en',en);
+    btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+  }); });
+})();
+</script>
+<script>
+(function(){
+  var box=document.querySelector('#lyrics .lyrics'); if(!box) return;
+  var btns=box.querySelectorAll('.ly-switch button');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var l=b.getAttribute('data-lang');
+    box.classList.toggle('is-ro',l==='ro'); box.classList.toggle('is-en',l==='en');
     btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
   }); });
 })();
