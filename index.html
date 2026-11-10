@@ -555,6 +555,18 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
   .listen .player iframe{height:352px;}
   .rel-next{justify-content:center;}
 }
+/* ---- 2026-11 追加：プロフィールの日本語／English 切り替え ---- */
+.lang-switch{display:flex;justify-content:center;gap:8px;margin:-10px auto 30px;}
+.lang-switch button{font:inherit;font-size:13px;letter-spacing:.14em;padding:7px 20px;border-radius:999px;cursor:pointer;
+  background:transparent;color:var(--ivory-dim);border:1px solid var(--line);transition:.3s;}
+.lang-switch button[data-lang="en"]{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.1em;}
+.lang-switch button:hover,.lang-switch button:focus-visible{color:var(--brass-hi);border-color:var(--line-brass);}
+.lang-switch button.on{color:var(--bg);background:linear-gradient(135deg,var(--brass-hi),var(--brass));border-color:transparent;}
+#profile .p-en,#profile .pe{display:none;}
+#profile.is-en .p-ja,#profile.is-en .pj{display:none;}
+#profile.is-en .p-en{display:block;}
+#profile.is-en .pe{display:inline;}
+#profile .p-en p{line-height:1.85;}
 </style>
 </head>
 <body class="no-js">
@@ -767,20 +779,32 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
   <section id="profile" class="frame reveal">
     <h2 class="sec">プロフィール<span class="en">PROFILE</span></h2>
     <div class="ornament" aria-hidden="true"><i></i></div>
-    <p class="en-line sec-en">Luminote is a Japanese lyricist, composer and arranger with over 20 years of composing. In 2026, Luminote launched the label POIKILIA. Luminote's songs — lyrics, melodies and arrangements — are all written by hand, without AI.</p>
+    <div class="lang-switch" role="group" aria-label="言語 / Language">
+      <button type="button" class="on" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
     <div class="profile">
       <div class="p-side">
         <div class="p-emblem" aria-hidden="true"><span class="clef music">𝄞</span></div>
         <div class="p-name">Luminote</div>
         <div class="p-kana">ルミノート</div>
-        <div class="p-role">作詞・作曲・編曲</div>
+        <div class="p-role"><span class="pj">作詞・作曲・編曲</span><span class="pe" lang="en">Lyricist · Composer · Arranger</span></div>
       </div>
       <div class="p-body">
+       <div class="p-ja">
         <p class="lead">Luminote（ルミノート）です。作詞・作曲・編曲をしています。</p>
         <p>1歳からピアノを弾いてきた、作曲歴20年以上の職業作曲家です。全国規模の作曲コンテストで<b class="hl2">最優秀賞</b>、編曲賞、部門賞などを受賞し、10代から歌ものやBGMの委嘱作曲を続けてきました。これまでにゲーム・アニメの主題歌や劇中歌、ゲーム音楽、YouTuber・VTuber・アーティストへの楽曲提供、アーティスト自作曲の編曲やオーケストレーション、校歌の作詞・作曲を担当してきました。作家名を出さない形での楽曲提供（いわゆるゴーストライティング）も行ってきました。現在のお仕事は、すべてLuminoteの名前でお受けしています。作曲・編曲は150曲、採譜は200曲を超えます。</p>
         <p>得意とするのは、女性ボーカルのアニメソングやJ-POP、ゲームや映像の劇伴です。絶対音感を持ち、ピアノ講師として教えていた時期もあります。作詞から作曲・編曲・演奏・ミックス・マスタリングまでを一人で行い、そのまま配信できる音源に仕上げます。</p>
         <p>2026年、依頼ではなく作りたい音楽を自分の名前で届けるため、レーベル「POIKILIA」を立ち上げ、Luminoteとしての活動を始めました。現在はどの事務所にも所属せず、フリーで活動しています。<span class="pledge">Luminoteの曲は、詞もメロディもアレンジも、AIを使わずにすべて自分の手で書いています。</span></p>
         <p><span id="pf-rel">1作目「藍色エクリプス」を10月23日に配信しました。11月には「レインボー★ユニコーン♪」（21日）と「弾ける衝動」（28日）を配信します。</span>新曲は今後も随時発表していきます。歌い手さんやVTuber・VSingerの方、イラストレーターの方とも、これから交流を広げていきたいと思っています。</p>
+       </div>
+       <div class="p-en" lang="en">
+        <p class="lead">I'm Luminote — a lyricist, composer and arranger.</p>
+        <p>I'm a professional composer with more than 20 years of composing, and I have played the piano since I was one. I won the <b class="hl2">grand prize</b>, an arrangement award and a category award, among others, at a nationwide composition contest, and I have been writing commissioned songs and background music since my teens. My work includes theme songs and insert songs for games and anime, game music, songs for YouTubers, VTubers and artists, arrangements and orchestrations of artists' own songs, and the lyrics and music of a school song. I have also written music released without my name (so-called ghostwriting). Today, I take on all work under the name Luminote. I have composed and arranged more than 150 songs and transcribed more than 200.</p>
+        <p>My specialties are anime songs and J-pop for female vocalists, and scores for games and film. I have absolute pitch, and I have also taught piano. I handle everything myself — lyrics, composition, arrangement, performance, mixing and mastering — and deliver tracks that are ready for release.</p>
+        <p>In 2026, I launched the label POIKILIA and began working as Luminote, to release the music I truly want to make — not commissions — under my own name. I'm not signed to any agency and work independently.<span class="pledge">Luminote's songs — lyrics, melodies and arrangements — are all written by hand, without AI.</span></p>
+        <p>My first single, "Indigo Eclipse," came out on October 23. In November, "Rainbow Unicorn" (November 21) and "Erumpe, Stella!" (November 28) will follow, and more new songs are on the way. I'd love to connect with singers, VTubers, VSingers and illustrators.</p>
+       </div>
       </div>
     </div>
   </section>
@@ -1112,6 +1136,17 @@ var RELEASE = {
     setTimeout(shoot, 6000+Math.random()*9000);
   }
   setTimeout(shoot, 2500);
+})();
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('profile'); if(!sec) return;
+  var btns=sec.querySelectorAll('.lang-switch button');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var en=b.getAttribute('data-lang')==='en';
+    sec.classList.toggle('is-en',en);
+    btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+  }); });
 })();
 </script>
 </body>
