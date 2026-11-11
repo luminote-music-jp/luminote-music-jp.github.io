@@ -615,6 +615,83 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 /* ---- 2026-11 追加：歌詞の折り返しの行を下げて、1行ずつ見分けやすくする ---- */
 .lyrics .stanza .ln{display:block;padding-left:1.2em;text-indent:-1.2em;}
 </style>
+<!-- ---- 2026-11 追加：検索エンジン向けの名札（構造化データ・JSON-LD）。見た目には出ない。曲が出たら MusicRecording を足す ---- -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "MusicGroup",
+   "@id": "https://luminote-music.com/#artist",
+   "name": "Luminote",
+   "alternateName": "ルミノート",
+   "url": "https://luminote-music.com/",
+   "image": "https://luminote-music.com/img/luminote-wordmark.png",
+   "description": "作詞・作曲・編曲をする日本の作曲家。歌声合成ソフト Synthesizer V の歌声で曲を発表しています。",
+   "genre": [
+    "J-Pop"
+   ],
+   "foundingDate": "2026",
+   "sameAs": [
+    "https://open.spotify.com/artist/327m28B4SJFugxzg1RSynP",
+    "https://music.apple.com/jp/artist/6817654211",
+    "https://music.amazon.co.jp/artists/B0HNZZJ7CB/luminote",
+    "https://music.line.me/webapp/artist/mi000000002d5ccadf",
+    "https://www.youtube.com/@Luminote-music-jp",
+    "https://x.com/luminote_music",
+    "https://vocadb.net/Ar/201091",
+    "https://soundcloud.com/luminote_music",
+    "https://www.nicovideo.jp/user/145421318"
+   ]
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://luminote-music.com/#website",
+   "name": "Luminote 公式サイト",
+   "url": "https://luminote-music.com/",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://luminote-music.com/#artist"
+   }
+  },
+  {
+   "@type": "MusicRecording",
+   "@id": "https://luminote-music.com/#indigo-eclipse",
+   "name": "藍色エクリプス",
+   "alternateName": [
+    "Indigo Eclipse",
+    "Aiiro Eclipse"
+   ],
+   "byArtist": {
+    "@id": "https://luminote-music.com/#artist"
+   },
+   "isrcCode": "QT66U2638603",
+   "datePublished": "2026-10-23",
+   "duration": "PT2M35S",
+   "inLanguage": "ja",
+   "url": "https://luminote-music.com/#lyrics",
+   "sameAs": [
+    "https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew",
+    "https://music.apple.com/jp/album/indigo-eclipse-feat-gumi-single/6817728375?i=6817728399",
+    "https://music.youtube.com/watch?v=RNbt59LWqsg",
+    "https://vocadb.net/S/1057920",
+    "https://linkco.re/EQE8z4m7"
+   ],
+   "recordingOf": {
+    "@type": "MusicComposition",
+    "name": "藍色エクリプス",
+    "composer": {
+     "@id": "https://luminote-music.com/#artist"
+    },
+    "lyricist": {
+     "@id": "https://luminote-music.com/#artist"
+    },
+    "inLanguage": "ja"
+   }
+  }
+ ]
+}
+</script>
 </head>
 <body class="no-js">
 
