@@ -576,6 +576,17 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 /* ---- 2026-11 追加：「Spotify アプリで聴く」ボタン（埋め込みは未ログインだと 30 秒の試聴になり、再生回数に入らないため） ---- */
 .listen .listen-app{margin-top:20px;}
 .listen .la-note{margin-top:10px;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;word-break:keep-all;}
+/* ---- 2026-11 追加：トップの歌詞の欄（曲のページへのリンクだけ）と、Links の VocaDB ---- */
+#lyrics .ly-go{display:flex;align-items:center;gap:16px;padding:18px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card);text-decoration:none;color:var(--ivory);transition:transform .3s,border-color .3s,box-shadow .3s;}
+#lyrics .ly-go:hover,#lyrics .ly-go:focus-visible{transform:translateY(-3px);border-color:var(--line-brass);box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 26px rgba(217,179,108,.15);}
+#lyrics .ly-go .ic{flex-shrink:0;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-brass);color:var(--brass-hi);font-size:17px;}
+#lyrics .ly-go .tt{flex:1;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.08em;}
+#lyrics .ly-go .tt-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--moon);margin-left:4px;}
+#lyrics .ly-go small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;margin-top:2px;}
+#lyrics .ly-go .ly-arrow{color:var(--brass);transition:transform .3s;}
+#lyrics .ly-go:hover .ly-arrow{transform:translateX(4px);}
+.sns-card.vd{grid-column:1 / -1;max-width:420px;width:100%;justify-self:center;}
+.sns-card.vd .s-ic{color:var(--wisteria);background:rgba(154,134,207,.08);box-shadow:0 0 20px rgba(154,134,207,.22);font-size:18px;}
 /* ---- 2026-11 追加：プロフィールの日本語／English 切り替え ---- */
 .lang-switch{display:flex;justify-content:center;gap:8px;margin:-10px auto 30px;}
 .lang-switch button{font:inherit;font-size:13px;letter-spacing:.14em;padding:7px 20px;border-radius:999px;cursor:pointer;
@@ -680,7 +691,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
    "datePublished": "2026-10-23",
    "duration": "PT2M35S",
    "inLanguage": "ja",
-   "url": "https://luminote-music.com/#lyrics",
+   "url": "https://luminote-music.com/indigo-eclipse/",
    "sameAs": [
     "https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew",
     "https://music.apple.com/jp/album/indigo-eclipse-feat-gumi-single/6817728375?i=6817728399",
@@ -860,59 +871,13 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <p class="news-follow">最新のお知らせは X（Twitter）でも。 <a href="https://x.com/luminote_music" target="_blank" rel="noopener">@luminote_music</a></p>
   </section>
 
-  <!-- ═══ 歌詞 ═══ -->
+  <!-- ═══ 歌詞（本文は曲のページへ移した・2026-11） ═══ -->
   <section id="lyrics" class="reveal">
-    <details class="fold">
-      <summary>
-        <span class="ic music" aria-hidden="true">♪</span>
-        <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small>藍色エクリプス (feat. GUMI)　作詞・作曲・編曲：Luminote　／　日本語・Romaji・English</small></span>
-        <span class="chev" aria-hidden="true"></span>
-      </summary>
-      <div class="fold-body">
-        <div class="lyrics">
-          <div class="ly-head"><b>藍色エクリプス</b><span>Indigo Eclipse ／ Luminote feat. GUMI</span></div>
-          <div class="lang-switch ly-switch" role="group" aria-label="歌詞の言語 / Lyrics language">
-            <button type="button" class="on" data-lang="ja" aria-pressed="true">日本語</button>
-            <button type="button" data-lang="ro" aria-pressed="false">Romaji</button>
-            <button type="button" data-lang="en" aria-pressed="false">English</button>
-          </div>
-          <div class="ly-ja">
-          <p class="stanza"><span class="ln">藍色の空を　君と見た</span><span class="ln">月が欠けてゆくの</span></p>
-          <p class="stanza"><span class="ln">静かな夜、今</span><span class="ln">君の声がする</span><span class="ln">口を手で隠す　癖までも覚えてる</span><span class="ln">目を閉じれば、まだ</span><span class="ln">笑う君がいる</span><span class="ln">今思えば　笑うツボは　よくわかんない</span></p>
-          <p class="stanza"><span class="ln">迷子のプレゼントと</span><span class="ln">また　言えなかったゴメンナサイが</span><span class="ln">月の裏で　埃かぶる</span></p>
-          <p class="stanza"><span class="ln">届かない光に　背伸びした</span><span class="ln">私の空に　影が堕ちてゆく</span><span class="ln">好きでした、なんて　遅刻だね</span><span class="ln">朽ちた月も綺麗</span></p>
-          <p class="stanza"><span class="ln">街のビルの窓</span><span class="ln">映る君を見た</span><span class="ln">後ろ姿だけで　わかってしまったの</span><span class="ln">笑い方までも</span><span class="ln">今も変わらない</span><span class="ln">ガラス一枚ぶん　遠い人になった</span></p>
-          <p class="stanza"><span class="ln">ピカピカのピアスで</span><span class="ln">まだ　君と撮ったツーショットが</span><span class="ln">非表示なのに　今夜も光る</span></p>
-          <p class="stanza"><span class="ln">さよならも言えず　終わらせた</span><span class="ln">それでも空は　明けてゆくんだね</span><span class="ln">幸せに、なんて　言わないわ</span><span class="ln">朝の月に笑う</span></p>
-          <p class="ly-credit">作詞・作曲・編曲：Luminote　歌：GUMI　©2026 Luminote / POIKILIA</p>
-          <p class="ly-credit">歌詞の転載は、「作詞：Luminote」のクレジットと本サイトへのリンクをつけてください。</p>
-          </div>
-          <div class="ly-ro" lang="ja-Latn">
-          <p class="stanza"><span class="ln">aiiro no sora wo kimi to mita</span><span class="ln">tsuki ga kakete yuku no</span></p>
-          <p class="stanza"><span class="ln">shizuka na yoru, ima</span><span class="ln">kimi no koe ga suru</span><span class="ln">kuchi wo te de kakusu kuse made mo oboeteru</span><span class="ln">me wo tojireba, mada</span><span class="ln">warau kimi ga iru</span><span class="ln">ima omoeba warau tsubo wa yoku wakannai</span></p>
-          <p class="stanza"><span class="ln">maigo no purezento to</span><span class="ln">mata ienakatta gomennasai ga</span><span class="ln">tsuki no ura de hokori kaburu</span></p>
-          <p class="stanza"><span class="ln">todokanai hikari ni senobi shita</span><span class="ln">watashi no sora ni kage ga ochite yuku</span><span class="ln">suki deshita, nante chikoku da ne</span><span class="ln">kuchita tsuki mo kirei</span></p>
-          <p class="stanza"><span class="ln">machi no biru no mado</span><span class="ln">utsuru kimi wo mita</span><span class="ln">ushirosugata dake de wakatte shimatta no</span><span class="ln">waraikata made mo</span><span class="ln">ima mo kawaranai</span><span class="ln">garasu ichimai bun tooi hito ni natta</span></p>
-          <p class="stanza"><span class="ln">pikapika no piasu de</span><span class="ln">mada kimi to totta tsuushotto ga</span><span class="ln">hihyouji na no ni kon'ya mo hikaru</span></p>
-          <p class="stanza"><span class="ln">sayonara mo iezu owaraseta</span><span class="ln">soredemo sora wa akete yuku n da ne</span><span class="ln">shiawase ni, nante iwanai wa</span><span class="ln">asa no tsuki ni warau</span></p>
-          <p class="ly-credit">Official romanization by Luminote.　Lyrics, music &amp; arrangement: Luminote　Vocals: GUMI　©2026 Luminote / POIKILIA</p>
-          <p class="ly-credit">If you share the lyrics, please credit "Lyrics: Luminote" and link to this site.</p>
-          </div>
-          <div class="ly-en" lang="en">
-          <p class="stanza"><span class="ln">I watched the indigo sky with you</span><span class="ln">And piece by piece, the moon is slipping away</span></p>
-          <p class="stanza"><span class="ln">The night is quiet, and now</span><span class="ln">I can hear your voice</span><span class="ln">I even remember how you cover your mouth with your hand</span><span class="ln">When I close my eyes, you're still there,</span><span class="ln">Laughing</span><span class="ln">Now that I think about it, I never really understood what made you laugh</span></p>
-          <p class="stanza"><span class="ln">The gift I never gave you</span><span class="ln">And the "I'm sorry" that, once again, I couldn't say</span><span class="ln">Gather dust on the far side of the moon</span></p>
-          <p class="stanza"><span class="ln">I stretched up on tiptoe toward a light I could never reach</span><span class="ln">And a shadow is falling across my sky</span><span class="ln">"I was in love with you" — a little late to say that now</span><span class="ln">Even crumbling, the moon is beautiful*</span></p>
-          <p class="stanza"><span class="ln">In a building's window downtown</span><span class="ln">I saw your reflection</span><span class="ln">I knew it was you from your back alone</span><span class="ln">Even the way you laugh</span><span class="ln">Hasn't changed at all</span><span class="ln">Only one pane of glass between us, yet you're on the far side now</span></p>
-          <p class="stanza"><span class="ln">That photo of the two of us, me in my shiny earrings — I still have it</span><span class="ln">It's hidden, and yet tonight it shines again</span></p>
-          <p class="stanza"><span class="ln">I couldn't even say goodbye — I ended it by myself, in silence</span><span class="ln">And still, the sky is growing brighter</span><span class="ln">"Be happy" — no, I won't say that</span><span class="ln">I smile at the morning moon</span></p>
-          <p class="ly-note">* In Japan, "The moon is beautiful, isn't it?" (Tsuki ga kirei desu ne) is widely known as an indirect way of saying "I love you."</p>
-          <p class="ly-credit">Official English translation by Luminote.　Lyrics, music &amp; arrangement: Luminote　Vocals: GUMI　©2026 Luminote / POIKILIA</p>
-          <p class="ly-credit">If you share the lyrics or this translation, please credit "Lyrics: Luminote" and link to this site.</p>
-          </div>
-        </div>
-      </div>
-    </details>
+    <a class="ly-go" href="/indigo-eclipse/#lyrics">
+      <span class="ic music" aria-hidden="true">♪</span>
+      <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small style="word-break:keep-all">藍色エクリプス (feat. GUMI)　／　<wbr>日本語・Romaji・English</small></span>
+      <span class="ly-arrow" aria-hidden="true">→</span>
+    </a>
   </section>
 
   <!-- 五線の帯 -->
@@ -924,9 +889,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <div class="ornament" aria-hidden="true"><i></i></div>
     <div class="shelf">
       <div class="slot reveal d1">
-        <a href="#lyrics" class="cover" style="display:block"><img src="img/indigo-eclipse.jpg" alt="藍色エクリプス（歌詞へ）" loading="lazy"></a>
+        <a href="/indigo-eclipse/" class="cover" style="display:block"><img src="img/indigo-eclipse.jpg" alt="藍色エクリプス（曲のページへ）" loading="lazy"></a>
         <div class="no">No. 01</div>
-        <h3>藍色エクリプス</h3>
+        <h3><a href="/indigo-eclipse/" style="color:inherit;text-decoration:none">藍色エクリプス</a></h3>
         <div class="meta">Indigo Eclipse ／ 2026.10.23 配信</div>
       </div>
       <div class="slot reveal d2">
@@ -1066,6 +1031,11 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
       <a class="sns-card xx" href="https://x.com/luminote_music" target="_blank" rel="noopener">
         <span class="s-ic latin" aria-hidden="true">X</span>
         <span class="s-tx"><b>X</b><small>@luminote_music</small></span>
+        <span class="s-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="sns-card vd" href="https://vocadb.net/Ar/201091" target="_blank" rel="noopener">
+        <span class="s-ic latin" aria-hidden="true">V</span>
+        <span class="s-tx"><b>VocaDB</b><small>曲と歌詞のデータベース</small></span>
         <span class="s-arrow" aria-hidden="true">→</span>
       </a>
     </div>
@@ -1391,15 +1361,6 @@ var RELEASE = {
   document.querySelectorAll('details').forEach(function(d){
     d.addEventListener('toggle',function(){ if(d.open){ var s=d.closest('section'); gc('open-'+(s?s.id:'x')); } });
   });
-})();
-</script>
-<script>
-/* ---- 2026-11 追加：「#lyrics」へのリンク（目次・ディスコグラフィの No.01）で来たら、歌詞の畳みを開く ---- */
-(function(){
-  var d=document.querySelector('#lyrics details'); if(!d) return;
-  function openLy(){ if(!d.open){ d.open=true; } }
-  document.addEventListener('click',function(e){ var a=e.target && e.target.closest && e.target.closest('a[href="#lyrics"]'); if(a){ openLy(); } });
-  if(location.hash==='#lyrics'){ openLy(); }
 })();
 </script>
 </body>
