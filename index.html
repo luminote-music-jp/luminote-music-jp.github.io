@@ -419,6 +419,8 @@ details.fold summary:hover .tt{color:var(--brass-hi);}
 
 /* ---- 連絡先の2段 ---- */
 .ways{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:center;}
+.ways.single{grid-template-columns:minmax(0,560px);justify-content:center;}
+.ways.single .way p{max-width:none;}
 .way{position:relative;border-radius:16px;padding:30px 24px 28px;border:1px solid var(--line);
   background:linear-gradient(170deg,rgba(255,255,255,.045),rgba(255,255,255,.01));display:flex;flex-direction:column;align-items:center;}
 .way::before{content:"";position:absolute;left:18%;right:18%;top:0;height:1px;}
@@ -1046,19 +1048,14 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
     <h2 class="sec">お仕事のご連絡<span class="en">CONTACT</span></h2>
     <div class="ornament" aria-hidden="true"><i></i></div>
     <p class="en-line sec-en">For work inquiries, please contact by email.</p>
-    <div class="ways">
-      <div class="way skima">
-        <div class="w-ic" aria-hidden="true"><span class="music">♫</span></div>
-        <h3>個人の方のご依頼</h3>
-        <p>SKIMAで料金と内容をご確認のうえ、そのままご依頼いただけます。</p>
-        <a class="btn" href="https://skima.jp/profile?id=532288" target="_blank" rel="noopener">SKIMAで見る</a>
-      </div>
+    <div class="ways single">
+      <!-- 個人の方のご依頼（SKIMA）のカードは、受付をお休みしているあいだ外しています（第24版・2026-11-13）。戻すときは第23版のこの位置のカードを入れ直す。 -->
       <div class="way mailbox">
         <div class="w-ic" aria-hidden="true">✉︎</div>
         <h3>企業の方・その他のご相談</h3>
         <p>商用利用や継続のお仕事のご相談は、こちらのアドレスまでお願いいたします。</p>
         <a class="mail" href="mailto:luminote.music.jp@gmail.com">luminote.music.jp@gmail.com</a>
-        <p class="small">内容によってはお返事までお時間をいただく場合があります。</p>
+        <p class="small">内容によっては<br>お返事までお時間をいただく場合があります。</p>
       </div>
     </div>
   
