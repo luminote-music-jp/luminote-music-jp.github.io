@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Luminote 公式サイト。新曲「レインボー★ユニコーン♪」（11月21日配信）と「弾ける衝動」（11月28日配信）、新着情報、ディスコグラフィ、歌詞、プロフィール、オフボーカル音源の配布、仕事のご連絡先。">
+<meta name="theme-color" content="#171320">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23171320'/%3E%3Cellipse cx='25' cy='45' rx='9.5' ry='7' transform='rotate(-22 25 45)' fill='%23F3D9A2'/%3E%3Crect x='31.5' y='12' width='3.6' height='33' rx='1.5' fill='%23F3D9A2'/%3E%3Cpath d='M35 12c4 7 13 9 11 21c-1-6-6-9-11-10z' fill='%23A8C2E8'/%3E%3C/svg%3E">
+<meta name="google-site-verification" content="H66uUlFwhdFOo1drVtkb-xWd4UY0BC_QED33kcQ3Uac" />
+<title>Luminote | 公式サイト</title>
+<!-- ---- 2026-11 追加：Twitter・LINE などでリンクを貼ったときのカード（OGP） ---- -->
+<link rel="canonical" href="https://luminote-music.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Luminote">
+<meta property="og:title" content="Luminote | 公式サイト">
+<meta property="og:description" content="作詞・作曲・編曲 Luminote（ルミノート）の公式サイト。新曲「レインボー★ユニコーン♪」は11月21日配信。">
+<meta property="og:url" content="https://luminote-music.com/">
+<meta property="og:image" content="https://luminote-music.com/img/rainbow-unicorn.jpg">
+<meta property="og:image:width" content="1000">
+<meta property="og:image:height" content="1000">
+<meta property="og:image:alt" content="レインボー★ユニコーン♪ のジャケット">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@luminote_music">
+<!-- ---- 2026-11 追加：アクセスの計測（GoatCounter・cookie なし。集計は https://luminote-music.goatcounter.com/） ---- -->
+<script data-goatcounter="https://luminote-music.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&text=%E3%83%AB%E3%83%9F%E3%83%8E%E3%83%BC%E3%83%88&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Music&text=%F0%9D%84%9E%E2%99%AA%E2%99%A9%E2%99%AB&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   色（夜の音楽室＋月光・藍・藤・薄紅を少し足した版）
+   ========================================================= */
+:root{
+  --bg:#171320;
+  --bg2:#1E1930;
+  --bg3:#241E3A;
+  --ivory:#EFE8DA;
+  --ivory-dim:#B9B0A0;
+  --brass:#D9B36C;        /* 譜面灯の真鍮 */
+  --brass-hi:#F3D9A2;     /* 真鍮のハイライト */
+  --indigo:#3E5FAE;       /* 藍 */
+  --moon:#A8C2E8;         /* 月光の青 */
+  --wisteria:#9A86CF;     /* 藤 */
+  --rose:#D7A0B4;         /* 薄紅 */
+  --line:rgba(239,232,218,0.16);
+  --line-brass:rgba(217,179,108,0.42);
+  --card:rgba(255,255,255,0.035);
+  --wrap:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  background:var(--bg);
+  color:var(--ivory);
+  font-family:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  line-height:1.9;font-size:15.5px;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+.serif{font-family:'Shippori Mincho B1','Hiragino Mincho ProN','Yu Mincho',serif;}
+.latin{font-family:'Cormorant Garamond',serif;}
+.music{font-family:'Noto Music',serif;}
+
+/* =========================================================
+   背景の層：オーロラ → 星空 → 光の粒 → 月 → 流れ星
+   ========================================================= */
+.sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.aurora{position:absolute;border-radius:50%;opacity:.55;will-change:transform;}
+.aurora.a1{width:90vmax;height:60vmax;left:-25vmax;top:-30vmax;
+  background:radial-gradient(closest-side,rgba(62,95,174,.38),rgba(62,95,174,0) 70%);
+  animation:drift1 38s ease-in-out infinite alternate;}
+.aurora.a2{width:80vmax;height:55vmax;right:-30vmax;top:-10vmax;
+  background:radial-gradient(closest-side,rgba(154,134,207,.30),rgba(154,134,207,0) 70%);
+  animation:drift2 46s ease-in-out infinite alternate;}
+.aurora.a3{width:70vmax;height:50vmax;left:10vmax;bottom:-30vmax;
+  background:radial-gradient(closest-side,rgba(215,160,180,.16),rgba(215,160,180,0) 70%);
+  animation:drift3 52s ease-in-out infinite alternate;}
+.aurora.a4{width:70vmax;height:40vmax;left:15vmax;top:-18vmax;
+  background:radial-gradient(closest-side,rgba(217,179,108,.16),rgba(217,179,108,0) 70%);
+  animation:drift2 60s ease-in-out infinite alternate-reverse;}
+@keyframes drift1{to{transform:translate3d(12vmax,8vmax,0) scale(1.12);}}
+@keyframes drift2{to{transform:translate3d(-10vmax,10vmax,0) scale(.92);}}
+@keyframes drift3{to{transform:translate3d(8vmax,-8vmax,0) scale(1.1);}}
+
+.starfield{position:absolute;left:-4%;top:-8vh;width:108%;height:125vh;will-change:transform;}
+.tw1{animation:twinkle 5.2s ease-in-out infinite;}
+.tw2{animation:twinkle 7.4s ease-in-out 1.8s infinite;}
+.tw3{animation:twinkle 9.1s ease-in-out 3.1s infinite;}
+@keyframes twinkle{0%,100%{opacity:.15;}50%{opacity:.85;}}
+
+#dust{position:absolute;inset:0;width:100%;height:100%;}
+
+/* 月：ジャケットの欠けた月に呼応させる */
+.moon{
+  position:absolute;right:7vw;top:90px;width:74px;height:74px;border-radius:50%;
+  background:radial-gradient(circle at 38% 36%,#F7F1E4 0%,#E9E0CC 55%,#CFC3A8 100%);
+  box-shadow:0 0 30px 6px rgba(243,217,162,.28),0 0 110px 30px rgba(168,194,232,.16);
+  will-change:transform;
+}
+.moon::after{ /* 欠け：夜の色の円を重ねる */
+  content:"";position:absolute;width:100%;height:100%;border-radius:50%;
+  left:-26%;top:-6%;background:var(--bg);
+  box-shadow:inset -2px -1px 6px rgba(168,194,232,.25);
+}
+.moon-halo{position:absolute;right:calc(7vw - 63px);top:27px;width:200px;height:200px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(168,194,232,.16),rgba(168,194,232,0));
+  animation:breathe 9s ease-in-out infinite;}
+@keyframes breathe{0%,100%{transform:scale(1);opacity:.7;}50%{transform:scale(1.18);opacity:1;}}
+
+.shoot{
+  position:absolute;height:1.5px;width:160px;border-radius:2px;
+  background:linear-gradient(90deg,rgba(243,217,162,0),rgba(243,217,162,.9) 70%,#fff);
+  filter:drop-shadow(0 0 6px rgba(243,217,162,.8));
+  transform-origin:right center;opacity:0;
+  animation:shoot 1.5s ease-out forwards;
+}
+@keyframes shoot{
+  0%{opacity:0;transform:translate3d(0,0,0) rotate(var(--ang)) scaleX(.3);}
+  15%{opacity:1;}
+  100%{opacity:0;transform:translate3d(var(--dx),var(--dy),0) rotate(var(--ang)) scaleX(1);}
+}
+
+/* マウスに付いてくる柔らかな光（PCのみ） */
+.cursor-glow{position:fixed;left:0;top:0;width:520px;height:520px;margin:-260px 0 0 -260px;border-radius:50%;
+  pointer-events:none;z-index:1;opacity:0;transition:opacity .6s;
+  background:radial-gradient(closest-side,rgba(243,217,162,.10),rgba(168,194,232,.05) 50%,rgba(0,0,0,0));
+  will-change:transform;}
+@media (hover:hover) and (pointer:fine){ .cursor-glow.on{opacity:1;} }
+
+/* =========================================================
+   レイアウト
+   ========================================================= */
+.wrap{position:relative;z-index:2;max-width:var(--wrap);margin:0 auto;padding:0 28px 80px;overflow-x:hidden;overflow-x:clip;}
+html,body{overflow-x:hidden;}
+@supports (overflow:clip){html,body{overflow-x:clip;}}
+
+/* ナビ（スクロールすると上に張り付く） */
+.topbar{
+  position:fixed;left:0;right:0;top:0;z-index:20;
+  transform:translateY(-110%);transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  background:linear-gradient(180deg,rgba(23,19,32,.88),rgba(23,19,32,.72));
+  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar.show{transform:translateY(0);}
+.topbar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
+  background:linear-gradient(90deg,transparent,var(--brass),var(--moon),var(--brass),transparent);opacity:.7;}
+.topbar .in{max-width:var(--wrap);margin:0 auto;padding:10px 24px;display:flex;align-items:center;gap:18px;}
+.topbar .mark{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--brass-hi);text-decoration:none;letter-spacing:.04em;white-space:nowrap;}
+.navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto;}
+.navlinks::-webkit-scrollbar{display:none;}
+.navlinks a{white-space:nowrap;text-decoration:none;color:var(--ivory-dim);font-size:12.5px;letter-spacing:.16em;padding:6px 12px;border-radius:999px;transition:color .3s,background .3s;}
+.navlinks a:hover,.navlinks a:focus-visible{color:var(--brass-hi);background:rgba(217,179,108,.10);}
+
+/* ---- ヘッダー ---- */
+header.hero-head{padding:110px 0 30px;text-align:center;position:relative;}
+.wm-box{position:relative;width:min(480px,86%);margin:0 auto;}
+.wordmark-img{width:100%;height:auto;
+  filter:drop-shadow(0 0 22px rgba(217,179,108,.35)) drop-shadow(0 0 70px rgba(168,194,232,.14));
+  animation:glow 7s ease-in-out infinite;}
+@keyframes glow{50%{filter:drop-shadow(0 0 30px rgba(243,217,162,.5)) drop-shadow(0 0 90px rgba(168,194,232,.22));}}
+/* ワードマークの上を光が通る（マスクはJSで画像から作る） */
+.wm-shine{position:absolute;inset:0;pointer-events:none;
+  -webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  background:linear-gradient(105deg,transparent 30%,rgba(255,250,235,.95) 48%,rgba(168,194,232,.8) 52%,transparent 70%);
+  background-size:300% 100%;background-position:150% 0;
+  animation:shine 7s ease-in-out 1.2s infinite;mix-blend-mode:screen;}
+@keyframes shine{0%{background-position:150% 0;}35%,100%{background-position:-60% 0;}}
+.role{margin-top:12px;font-size:13px;letter-spacing:.5em;text-indent:.5em;
+  background:linear-gradient(90deg,var(--ivory-dim),var(--brass-hi),var(--moon),var(--ivory-dim));
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:flow 12s linear infinite;}
+@keyframes flow{to{background-position:300% 0;}}
+.subrole{margin-top:4px;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.3em;text-indent:.3em;}
+
+/* 装飾罫：二重罫＋中央の菱形 */
+.ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px auto 0;width:min(340px,80%);}
+.ornament::before,.ornament::after{content:"";flex:1;height:5px;
+  border-top:1px solid var(--line-brass);border-bottom:1px solid rgba(217,179,108,.22);}
+.ornament::before{-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000);}
+.ornament::after{-webkit-mask:linear-gradient(270deg,transparent,#000);mask:linear-gradient(270deg,transparent,#000);}
+.ornament i{width:9px;height:9px;transform:rotate(45deg);border:1px solid var(--brass);background:rgba(217,179,108,.25);
+  box-shadow:0 0 12px rgba(243,217,162,.6);animation:pulse 4s ease-in-out infinite;}
+@keyframes pulse{50%{box-shadow:0 0 22px rgba(243,217,162,.95);background:rgba(243,217,162,.55);}}
+
+nav.inline{margin-top:26px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 6px;}
+nav.inline a{color:var(--ivory-dim);text-decoration:none;font-size:13px;letter-spacing:.18em;padding:6px 14px;border-radius:999px;transition:color .3s,background .3s;}
+nav.inline a:hover,nav.inline a:focus-visible{color:var(--brass-hi);background:rgba(217,179,108,.08);}
+
+/* =========================================================
+   新曲（最上段）
+   ========================================================= */
+.release{
+  margin-top:46px;position:relative;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:56px;align-items:center;
+  padding:54px 56px;border-radius:22px;
+  background:
+    radial-gradient(600px 380px at 20% 30%,rgba(62,95,174,.28),transparent 70%),
+    radial-gradient(500px 360px at 90% 90%,rgba(154,134,207,.16),transparent 70%),
+    linear-gradient(160deg,rgba(36,30,58,.82),rgba(23,19,32,.82));
+  border:1px solid var(--line-brass);
+  box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 0 0 6px rgba(23,19,32,.6),inset 0 0 0 7px rgba(217,179,108,.20);
+}
+/* 外周をゆっくり回る光 */
+.release::before{
+  content:"";position:absolute;inset:-1px;border-radius:23px;padding:1px;pointer-events:none;
+  background:conic-gradient(from var(--a,0deg),transparent 0 70%,rgba(243,217,162,.9) 80%,rgba(168,194,232,.8) 86%,transparent 92%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  animation:spin 9s linear infinite;
+}
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false;}
+@keyframes spin{to{--a:360deg;}}
+
+.jacket-stage{position:relative;aspect-ratio:1/1;}
+.jacket-halo{position:absolute;inset:-14%;border-radius:50%;pointer-events:none;
+  background:radial-gradient(closest-side,rgba(168,194,232,.32),rgba(62,95,174,.18) 45%,rgba(217,179,108,.08) 65%,transparent 75%);
+  animation:breathe 8s ease-in-out infinite;}
+.jacket-ring{position:absolute;inset:-7%;border-radius:50%;pointer-events:none;
+  border:1px dashed rgba(217,179,108,.28);animation:rot 80s linear infinite;}
+.jacket-ring.r2{inset:-11%;border:1px solid rgba(168,194,232,.14);animation-duration:120s;animation-direction:reverse;}
+@keyframes rot{to{transform:rotate(360deg);}}
+.jacket{position:relative;width:100%;height:100%;border-radius:6px;overflow:hidden;
+  box-shadow:0 26px 60px rgba(0,0,0,.55),0 0 0 1px rgba(243,217,162,.35),0 0 60px rgba(168,194,232,.18);
+  animation:float 7.5s ease-in-out infinite;will-change:transform;}
+.jacket img{width:100%;height:100%;object-fit:cover;}
+.jacket::after{ /* 紙の上を光がすべる */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.45) 50%,transparent 65%);
+  background-size:260% 100%;background-position:160% 0;
+  animation:sheen 9s ease-in-out 2s infinite;mix-blend-mode:soft-light;}
+@keyframes sheen{0%{background-position:160% 0;}30%,100%{background-position:-60% 0;}}
+@keyframes float{0%,100%{transform:translateY(0) rotate(-.6deg);}50%{transform:translateY(-12px) rotate(.6deg);}}
+
+.rel-info{position:relative;}
+.eyebrow{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.42em;color:var(--brass-hi);display:flex;align-items:center;gap:12px;}
+.eyebrow::after{content:"";height:1px;flex:1;max-width:120px;background:linear-gradient(90deg,var(--brass),transparent);}
+.rel-title{margin-top:14px;font-family:'Shippori Mincho B1',serif;font-weight:700;
+  font-size:clamp(30px,4.4vw,48px);letter-spacing:.1em;line-height:1.35;
+  background:linear-gradient(100deg,#FFFFFF 0%,var(--ivory) 30%,var(--moon) 55%,var(--ivory) 75%,var(--brass-hi) 100%);
+  background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:flow 14s linear infinite;
+  filter:drop-shadow(0 0 18px rgba(168,194,232,.25));}
+.rel-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--moon);letter-spacing:.08em;margin-top:2px;}
+.rel-artist{margin-top:10px;font-size:14px;color:var(--ivory-dim);letter-spacing:.12em;}
+.rel-artist b{color:var(--ivory);font-weight:500;}
+.rel-date{margin-top:22px;display:inline-flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding:8px 18px;border-radius:999px;border:1px solid var(--line-brass);background:rgba(217,179,108,.07);}
+.rel-date .d{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--brass-hi);letter-spacing:.08em;}
+.rel-date .t{font-size:13px;color:var(--ivory);letter-spacing:.1em;}
+
+.cd-label{margin-top:26px;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.24em;}
+.countdown{margin-top:8px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;max-width:400px;}
+.cd{position:relative;text-align:center;padding:12px 4px 8px;border-radius:12px;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.015));
+  border:1px solid var(--line);overflow:hidden;}
+.cd::before{content:"";position:absolute;left:10%;right:10%;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--brass-hi),transparent);}
+.cd .n{font-family:'Cormorant Garamond',serif;font-size:34px;line-height:1;color:var(--ivory);font-variant-numeric:tabular-nums;
+  text-shadow:0 0 14px rgba(168,194,232,.45);}
+.cd .u{font-size:11px;color:var(--ivory-dim);letter-spacing:.2em;margin-top:6px;}
+.cd .n.tick{animation:tick .6s ease-out;}
+@keyframes tick{0%{color:var(--brass-hi);text-shadow:0 0 18px rgba(243,217,162,.9);}100%{}}
+
+.cta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+.btn{position:relative;display:inline-flex;align-items:center;gap:10px;overflow:hidden;
+  padding:13px 28px;border-radius:999px;text-decoration:none;font-size:14px;letter-spacing:.14em;
+  color:#1B1626;font-weight:700;
+  background:linear-gradient(135deg,#F6E2B5,#D9B36C 55%,#B88E48);
+  box-shadow:0 8px 26px rgba(217,179,108,.35),inset 0 1px 0 rgba(255,255,255,.6);
+  transition:transform .3s,box-shadow .3s;}
+.btn::after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.7),transparent);
+  animation:btnshine 4.5s ease-in-out infinite;}
+@keyframes btnshine{0%,60%{left:-60%;}100%{left:130%;}}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px);box-shadow:0 12px 34px rgba(217,179,108,.5),inset 0 1px 0 rgba(255,255,255,.6);}
+.btn.wait{cursor:default;color:var(--brass-hi);background:rgba(217,179,108,.08);
+  border:1px solid var(--line-brass);box-shadow:none;font-weight:500;}
+.btn.wait::after{background:linear-gradient(100deg,transparent,rgba(243,217,162,.25),transparent);}
+.btn.wait:hover{transform:none;}
+.rel-note{margin-top:14px;font-size:13px;color:var(--ivory-dim);}
+.dsp{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px;}
+.dsp a,.dsp span{font-size:12px;letter-spacing:.06em;border:1px solid var(--line);border-radius:999px;padding:4px 14px;color:var(--ivory-dim);text-decoration:none;transition:.3s;}
+.dsp a:hover,.dsp a:focus-visible{color:var(--brass-hi);border-color:var(--line-brass);background:rgba(217,179,108,.08);}
+
+/* =========================================================
+   五線の帯（区画の境）
+   ========================================================= */
+.staff{position:relative;margin:92px auto 0;height:70px;max-width:900px;}
+.staff svg{width:100%;height:100%;overflow:visible;}
+.staff .clef{position:absolute;left:2%;top:50%;transform:translateY(-54%);font-size:78px;line-height:1;color:var(--brass);
+  text-shadow:0 0 18px rgba(243,217,162,.55);opacity:.9;}
+.staff .glint{stroke-dasharray:60 900;animation:glint 7s linear infinite;}
+.staff .glint.g2{animation-delay:-2.2s;animation-duration:8.5s;}
+.staff .glint.g3{animation-delay:-4.6s;animation-duration:9.5s;}
+@keyframes glint{from{stroke-dashoffset:960;}to{stroke-dashoffset:0;}}
+.staff .note{animation:bob 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+.staff .note:nth-of-type(2n){animation-delay:-1.6s;}
+.staff .note:nth-of-type(3n){animation-delay:-3.1s;}
+@keyframes bob{50%{transform:translateY(-4px);opacity:1;}}
+
+/* =========================================================
+   区画（枠・角飾り・見出し）
+   ========================================================= */
+section{margin-top:56px;scroll-margin-top:80px;}
+.frame{position:relative;border-radius:18px;padding:44px 46px;
+  background:linear-gradient(170deg,rgba(36,30,58,.62),rgba(23,19,32,.55));
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(0,0,0,.30),inset 0 0 0 6px rgba(23,19,32,.5),inset 0 0 0 7px rgba(217,179,108,.13);}
+.cn{position:absolute;width:46px;height:46px;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46' fill='none' stroke='%23D9B36C'%3E%3Cpath d='M3 40V9a6 6 0 0 1 6-6h31' stroke-width='1.3'/%3E%3Cpath d='M9 40V15a6 6 0 0 1 6-6h25' stroke-width='.8' opacity='.6'/%3E%3Cpath d='M15 15c4 0 6-2 6-6M15 15c0 4-2 6-6 6' stroke-width='.9' opacity='.8'/%3E%3Ccircle cx='15' cy='15' r='2.2' fill='%23F3D9A2' stroke='none'/%3E%3Ccircle cx='40' cy='3' r='1.4' fill='%23D9B36C' stroke='none'/%3E%3Ccircle cx='3' cy='40' r='1.4' fill='%23D9B36C' stroke='none'/%3E%3C/svg%3E") no-repeat center/contain;
+  filter:drop-shadow(0 0 6px rgba(243,217,162,.45));}
+.cn.tl{left:10px;top:10px;}
+.cn.tr{right:10px;top:10px;transform:scaleX(-1);}
+.cn.bl{left:10px;bottom:10px;transform:scaleY(-1);}
+.cn.br{right:10px;bottom:10px;transform:scale(-1,-1);}
+
+h2.sec{text-align:center;font-family:'Shippori Mincho B1',serif;font-size:22px;font-weight:700;letter-spacing:.16em;color:var(--brass-hi);
+  text-shadow:0 0 20px rgba(217,179,108,.35);}
+h2.sec .en{display:block;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.5em;color:var(--moon);font-weight:500;margin-top:2px;text-indent:.5em;}
+h2.sec + .ornament{margin:14px auto 34px;}
+
+/* ---- ディスコグラフィ（棚） ---- */
+.shelf{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;}
+.slot{position:relative;text-align:center;}
+.slot .cover{position:relative;aspect-ratio:1/1;border-radius:8px;overflow:hidden;
+  border:1px solid var(--line);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s;}
+.slot:hover .cover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.5),0 0 34px rgba(168,194,232,.22);}
+.slot .cover img{width:100%;height:100%;object-fit:cover;}
+.slot .cover.empty{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:6px;
+  background:
+    radial-gradient(circle at 50% 40%,rgba(154,134,207,.20),transparent 60%),
+    repeating-linear-gradient(0deg,transparent 0 22px,rgba(239,232,218,.05) 22px 23px),
+    linear-gradient(160deg,#241E3A,#171320);}
+.slot .cover.empty .q{font-size:46px;color:var(--wisteria);text-shadow:0 0 22px rgba(154,134,207,.7);animation:breathe 6s ease-in-out infinite;}
+.slot .cover.empty .cs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;color:var(--ivory-dim);letter-spacing:.1em;}
+.slot .cover.empty::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.07) 50%,transparent 60%);background-size:250% 100%;
+  animation:sheen 6s ease-in-out infinite;}
+.slot .no{margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;color:var(--brass);}
+.slot h3{font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.08em;margin-top:2px;}
+.slot .meta{font-size:12.5px;color:var(--ivory-dim);letter-spacing:.06em;}
+.slot.dim h3{color:var(--ivory-dim);}
+
+/* ---- プロフィール ---- */
+.profile{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:44px;align-items:start;}
+.p-side{text-align:center;position:relative;padding-top:6px;}
+.p-emblem{position:relative;width:min(230px,70%);aspect-ratio:1/1;margin:0 auto;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 45%,rgba(62,95,174,.35),rgba(23,19,32,.2) 65%);
+  border:1px solid var(--line-brass);
+  box-shadow:0 0 0 8px rgba(23,19,32,.55),0 0 0 9px rgba(217,179,108,.2),0 0 60px rgba(168,194,232,.2);}
+.p-emblem::before{content:"";position:absolute;inset:-18px;border-radius:50%;border:1px dashed rgba(217,179,108,.25);animation:rot 90s linear infinite;}
+.p-emblem .clef{font-size:120px;line-height:1;color:var(--brass-hi);text-shadow:0 0 26px rgba(243,217,162,.6);transform:translateY(-4%);animation:sway 9s ease-in-out infinite;}
+@keyframes sway{50%{transform:translateY(-8%) rotate(3deg);}}
+.p-name{margin-top:26px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;color:var(--ivory);letter-spacing:.05em;}
+.p-kana{font-size:12.5px;color:var(--ivory-dim);letter-spacing:.3em;}
+.p-role{margin-top:8px;display:inline-block;font-size:13px;letter-spacing:.2em;color:var(--brass-hi);
+  padding:4px 16px;border-radius:999px;border:1px solid var(--line-brass);background:rgba(217,179,108,.07);}
+.p-body .lead{font-size:16px;line-height:2;}
+.p-body h3{margin-top:26px;font-family:'Shippori Mincho B1',serif;font-size:15.5px;letter-spacing:.14em;color:var(--brass-hi);
+  display:flex;align-items:center;gap:10px;}
+.p-body h3::before{content:"";width:7px;height:7px;transform:rotate(45deg);background:var(--brass);box-shadow:0 0 10px rgba(243,217,162,.8);}
+.p-body h3::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line-brass),transparent);}
+.p-body ul{list-style:none;margin-top:10px;}
+.p-body li{position:relative;padding:5px 0 5px 22px;font-size:14.5px;border-bottom:1px dashed rgba(239,232,218,.07);}
+.p-body li::before{content:"♪";font-family:'Noto Music',serif;position:absolute;left:0;top:5px;color:var(--moon);font-size:13px;opacity:.85;}
+.p-body li.award{color:var(--ivory);}
+.p-body li.award::before{content:"";width:8px;height:8px;top:14px;left:3px;border-radius:50%;
+  background:radial-gradient(circle,#FFF4D6,var(--brass));box-shadow:0 0 10px rgba(243,217,162,.9);}
+
+
+.p-body p{margin-top:16px;font-size:15px;line-height:2.05;color:var(--ivory);}
+.p-body p.lead{margin-top:0;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.04em;color:var(--brass-hi);text-wrap:balance;
+  padding-bottom:12px;border-bottom:1px solid var(--line-brass);}
+.p-body b.hl{font-weight:700;color:var(--brass-hi);font-family:'Shippori Mincho B1',serif;text-shadow:0 0 12px rgba(243,217,162,.45);}
+.p-body b.hl2{font-weight:700;color:var(--moon);text-shadow:0 0 12px rgba(168,194,232,.5);}.pf-b{font-weight:700;color:inherit;}
+.p-body .pledge{display:block;margin-top:12px;padding:12px 16px;border-radius:10px;border-left:3px solid var(--rose);
+  background:linear-gradient(90deg,rgba(215,160,180,.10),rgba(215,160,180,0));color:var(--ivory);}
+/* ---- オフボーカル（畳み） ---- */
+details.fold{border-radius:16px;border:1px solid var(--line);background:linear-gradient(170deg,rgba(36,30,58,.5),rgba(23,19,32,.45));overflow:hidden;}
+details.fold summary{list-style:none;cursor:pointer;padding:22px 28px;display:flex;align-items:center;gap:16px;}
+details.fold summary::-webkit-details-marker{display:none;}
+details.fold summary .ic{flex-shrink:0;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line-brass);color:var(--brass-hi);font-size:20px;background:rgba(217,179,108,.07);}
+details.fold summary .tt{font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.1em;}
+details.fold summary .tt small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;}
+details.fold summary .chev{margin-left:auto;width:12px;height:12px;border-right:1.5px solid var(--brass);border-bottom:1.5px solid var(--brass);transform:rotate(45deg);transition:transform .4s;}
+details.fold[open] summary .chev{transform:rotate(225deg);}
+details.fold summary:hover .tt{color:var(--brass-hi);}
+.fold-body{padding:0 28px 28px;}
+.fold-body p.note{color:var(--ivory-dim);font-size:14px;}
+.terms{margin-top:18px;background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:22px 26px;font-size:13.5px;}
+.terms h3{font-family:'Shippori Mincho B1',serif;font-size:15px;color:var(--brass);letter-spacing:.1em;margin-bottom:12px;}
+.terms ol{padding-left:1.4em;}
+.terms li{margin:7px 0;}
+.terms li::marker{color:var(--brass);}
+.terms .fine{margin-top:14px;font-size:12.5px;color:var(--ivory-dim);}.dl-list{list-style:none;margin:18px 0 0;padding:0;}.dl-list li{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:16px 20px;}.dl-list .dl-tx{display:flex;flex-direction:column;gap:3px;}.dl-list .dl-tx b{font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.04em;}.dl-list .dl-tx small{font-size:12.5px;color:var(--ivory-dim);}.dl-list .btn{margin-top:0;}.lyrics{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:26px 30px;}.lyrics .ly-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--line);}.lyrics .ly-head b{font-family:'Shippori Mincho B1',serif;font-size:18px;letter-spacing:.08em;color:#F3D9A2;}.lyrics .ly-head span{font-size:12.5px;color:var(--ivory-dim);letter-spacing:.06em;}.lyrics .stanza{font-family:'Shippori Mincho B1',serif;font-size:15.5px;line-height:2.1;letter-spacing:.04em;margin:0 0 22px;color:var(--ivory);}.lyrics .ly-credit{margin-top:6px;font-size:12.5px;color:var(--ivory-dim);}@media(max-width:640px){.lyrics{padding:20px 18px;}.lyrics .stanza{font-size:14.5px;}}.report{margin-top:18px;background:linear-gradient(135deg,rgba(217,179,108,.10),rgba(168,194,232,.08));border:1px solid rgba(217,179,108,.45);border-radius:14px;padding:20px 24px;font-size:14px;}.report h3{font-family:'Shippori Mincho B1',serif;font-size:16px;color:var(--brass);letter-spacing:.06em;margin-bottom:10px;}.report p{margin:6px 0;}.report a{color:#F3D9A2;text-decoration:underline;text-underline-offset:3px;}.report .sub{font-size:13px;color:var(--ivory-dim);}
+
+/* ---- コンタクト ---- */
+.contact{text-align:center;}
+.mail{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:clamp(19px,3.2vw,26px);letter-spacing:.06em;
+  color:var(--brass-hi);text-decoration:none;word-break:break-all;padding:6px 6px;
+  text-shadow:0 0 18px rgba(217,179,108,.4);
+  background:linear-gradient(var(--brass),var(--brass)) no-repeat 50% 100%/0 1px;transition:background-size .5s;}
+.mail:hover,.mail:focus-visible{background-size:100% 1px;}
+.contact p{font-size:13.5px;color:var(--ivory-dim);margin-top:12px;}
+.links{margin-top:26px;display:flex;justify-content:center;flex-wrap:wrap;gap:12px;}
+.links a{display:inline-flex;align-items:center;gap:8px;padding:10px 28px;border-radius:999px;border:1px solid var(--line);
+  text-decoration:none;font-size:13.5px;letter-spacing:.14em;transition:.35s;background:rgba(255,255,255,.03);}
+.links a .dot{width:6px;height:6px;border-radius:50%;background:var(--moon);box-shadow:0 0 8px var(--moon);}
+.links a:nth-child(2) .dot{background:var(--rose);box-shadow:0 0 8px var(--rose);}
+.links a:hover,.links a:focus-visible{color:var(--brass-hi);border-color:var(--line-brass);background:rgba(217,179,108,.08);box-shadow:0 0 24px rgba(217,179,108,.18);}
+
+
+/* ---- 連絡先の2段 ---- */
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:22px;text-align:center;}
+.ways.single{grid-template-columns:minmax(0,560px);justify-content:center;}
+.ways.single .way p{max-width:none;}
+.way{position:relative;border-radius:16px;padding:30px 24px 28px;border:1px solid var(--line);
+  background:linear-gradient(170deg,rgba(255,255,255,.045),rgba(255,255,255,.01));display:flex;flex-direction:column;align-items:center;}
+.way::before{content:"";position:absolute;left:18%;right:18%;top:0;height:1px;}
+.way.skima::before{background:linear-gradient(90deg,transparent,var(--rose),var(--brass-hi),transparent);}
+.way.mailbox::before{background:linear-gradient(90deg,transparent,var(--moon),var(--brass-hi),transparent);}
+.w-ic{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;
+  border:1px solid var(--line-brass);color:var(--brass-hi);background:rgba(217,179,108,.07);box-shadow:0 0 22px rgba(217,179,108,.18);}
+.way.skima .w-ic{color:var(--rose);box-shadow:0 0 22px rgba(215,160,180,.22);}
+.way.mailbox .w-ic{color:var(--moon);box-shadow:0 0 22px rgba(168,194,232,.22);}
+.way h3{margin-top:14px;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.12em;color:var(--ivory);}
+.way p{margin-top:10px;font-size:13.5px;color:var(--ivory-dim);text-wrap:pretty;max-width:26em;}
+.way p.small{font-size:12.5px;margin-top:8px;}
+.way .btn{margin-top:auto;}
+.way.skima p{margin-bottom:22px;}
+.way .mail{margin-top:14px;font-size:clamp(17px,2.2vw,21px);}
+@media (max-width:860px){.ways{grid-template-columns:1fr;gap:16px;}.way{padding:26px 18px 24px;}}
+
+/* ---- リンク（SNS） ---- */
+.links-lead{text-align:center;font-size:14px;color:var(--ivory-dim);margin-bottom:24px;}
+.sns{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;margin:0 auto;}
+.sns-card{position:relative;display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:14px;text-decoration:none;
+  border:1px solid var(--line);background:linear-gradient(170deg,rgba(255,255,255,.045),rgba(255,255,255,.01));overflow:hidden;
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s;}
+.sns-card::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.08) 50%,transparent 60%);background-size:250% 100%;background-position:160% 0;transition:background-position .9s;}
+.sns-card:hover,.sns-card:focus-visible{transform:translateY(-3px);border-color:var(--line-brass);box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 26px rgba(217,179,108,.15);}
+.sns-card:hover::after{background-position:-60% 0;}
+.s-ic{flex-shrink:0;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:17px;border:1px solid var(--line-brass);}
+.sns-card.yt .s-ic{color:var(--rose);background:rgba(215,160,180,.08);box-shadow:0 0 20px rgba(215,160,180,.22);padding-left:3px;}
+.sns-card.xx .s-ic{color:var(--moon);background:rgba(168,194,232,.08);box-shadow:0 0 20px rgba(168,194,232,.22);font-size:20px;}
+.s-tx{display:flex;flex-direction:column;line-height:1.5;min-width:0;}
+.s-tx b{font-weight:500;letter-spacing:.12em;color:var(--ivory);}
+.s-tx small{font-family:'Cormorant Garamond',serif;font-size:15px;color:var(--ivory-dim);letter-spacing:.04em;overflow-wrap:anywhere;}
+.s-arrow{margin-left:auto;color:var(--brass);transition:transform .4s;}
+.sns-card:hover .s-arrow{transform:translateX(4px);}
+@media (max-width:860px){.sns{grid-template-columns:1fr;gap:12px;}.sns-card{padding:16px 18px;}}
+
+/* ---- 謝辞 ---- */
+.thanks-lead{text-align:center;font-size:14px;color:var(--ivory-dim);line-height:2;}
+.thanks-h{margin:30px auto 18px;text-align:center;font-family:'Shippori Mincho B1',serif;font-size:15px;letter-spacing:.2em;color:var(--brass-hi);}
+.thanks-h .latin{display:block;font-size:12px;letter-spacing:.4em;color:var(--moon);font-style:italic;}
+.font-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:16px;}
+.font-grid .font-card{flex:0 1 calc((100% - 32px)/3);}
+.font-card{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;padding:22px 16px 18px;border-radius:14px;
+  text-decoration:none;border:1px solid var(--line);background:linear-gradient(170deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s,box-shadow .4s,opacity 1.1s;}
+.font-card:hover,.font-card:focus-visible{transform:translateY(-4px);border-color:var(--line-brass);box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 26px rgba(217,179,108,.14);}
+.font-card .use{font-size:11px;letter-spacing:.16em;color:var(--brass-hi);padding:2px 12px;border-radius:999px;border:1px solid var(--line-brass);background:rgba(217,179,108,.06);}
+.font-card .smp{display:flex;align-items:center;justify-content:center;height:64px;width:100%;color:var(--ivory);line-height:1.2;
+  text-shadow:0 0 16px rgba(168,194,232,.3);}
+.font-card .smp.img{height:64px;}
+.font-card .wm-sample{background-repeat:no-repeat;background-position:center;background-size:contain;filter:drop-shadow(0 0 10px rgba(217,179,108,.35));}
+.font-card .paper img{max-height:46px;width:auto;border-radius:4px;box-shadow:0 4px 14px rgba(0,0,0,.4);}
+.font-card .fname{line-height:1.4;font-family:'Cormorant Garamond','Shippori Mincho B1',serif;font-size:18px;letter-spacing:.04em;color:var(--ivory);}
+.font-card .maker{line-height:1.6;font-size:12.5px;color:var(--ivory-dim);}
+.font-card:nth-child(7n+1) .smp{text-shadow:0 0 16px rgba(243,217,162,.35);}
+.font-card:nth-child(3n+2) .use{color:var(--moon);border-color:rgba(168,194,232,.35);background:rgba(168,194,232,.06);}
+.font-card:nth-child(3n) .use{color:var(--rose);border-color:rgba(215,160,180,.35);background:rgba(215,160,180,.06);}
+@media (max-width:860px){.font-grid{gap:12px;}.font-grid .font-card{flex-basis:calc((100% - 12px)/2);}.font-card{padding:18px 10px 14px;}.font-card .fname{font-size:16px;}.font-card .smp{height:56px;}}
+@media (max-width:420px){.font-card .smp span,.font-card .smp{font-size:smaller;}}
+/* ---- 2026-11 追加：謝辞「紹介してくださった方々」（フォントのカードと同じ形） ---- */
+.thanks-sub{text-align:center;font-size:13.5px;color:var(--ivory-dim);line-height:2;margin:-6px auto 18px;}
+.thanks-sub .en-line{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14.5px;color:var(--moon);letter-spacing:.02em;}
+.cur-card .smp.cur-name{height:auto;min-height:52px;font-family:'Cormorant Garamond','Shippori Mincho B1',serif;font-size:25px;font-weight:600;letter-spacing:.02em;text-shadow:0 0 14px rgba(243,217,162,.22);}
+.cur-card .fname{font-size:15.5px;font-style:italic;}
+.cur-card .songs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:4px;}
+.cur-card .songs i{font-style:normal;font-size:11px;letter-spacing:.08em;color:var(--ivory-dim);padding:1px 10px;border-radius:999px;border:1px dashed rgba(239,232,218,.22);}
+.cur-card .songs i::before{content:"♪ ";color:var(--brass);}
+.cur-grid .cur-card{min-width:0;}
+.kw-fold{margin:30px auto 6px;}
+.kw-fold summary .ic{font-family:'Cormorant Garamond',serif;font-size:30px;line-height:1;padding-top:12px;}
+.kw-fold .fold-body{padding-top:4px;}
+.kw-thanks{margin:26px auto 4px;max-width:44em;text-align:center;font-size:14px;line-height:2;color:var(--ivory);}
+.kw-thanks .en-line{display:block;margin-top:6px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;line-height:1.7;color:var(--moon);}
+.kw-thanks .ph{display:inline-block;}
+.kw-thanks .sig{display:block;margin-top:10px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;letter-spacing:.06em;color:var(--brass-hi);}
+.kw-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px;}
+.kw-card{position:relative;margin:0;padding:26px 24px 18px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.015));display:flex;flex-direction:column;gap:10px;}
+.kw-card::before{content:"\201C";position:absolute;top:-6px;left:14px;font-family:'Cormorant Garamond',serif;font-size:64px;line-height:1;color:var(--brass);opacity:.55;}
+.kw-card.wide{grid-column:1 / -1;}
+.kw-card blockquote{margin:0;font-family:'Cormorant Garamond','Shippori Mincho B1',serif;font-style:italic;font-size:18.5px;line-height:1.6;color:var(--ivory);letter-spacing:.01em;}
+.kw-card .tr{margin:0;font-size:13px;line-height:1.9;color:var(--ivory-dim);}
+.kw-card .tr::before{content:"訳 ";font-size:10.5px;letter-spacing:.12em;color:var(--moon);margin-right:4px;}
+.kw-card figcaption{display:block;margin-top:auto;padding-top:10px;border-top:1px dashed rgba(239,232,218,.14);}
+.kw-card figcaption b{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--brass-hi);letter-spacing:.03em;}
+.kw-card figcaption .kind{font-size:11px;letter-spacing:.12em;color:var(--ivory-dim);margin-left:10px;}
+.kw-card figcaption .song{display:table;margin:8px 0 0;font-size:11px;letter-spacing:.06em;color:var(--ivory-dim);padding:1px 10px;border-radius:999px;border:1px dashed rgba(239,232,218,.22);}
+.kw-card figcaption .song::before{content:"♪ ";color:var(--brass);}
+.kw-card:nth-child(3n+2)::before{color:var(--moon);}
+.kw-card:nth-child(3n)::before{color:var(--rose);}
+@media (max-width:860px){.kw-grid{grid-template-columns:1fr;gap:12px;}.kw-card{padding:24px 18px 16px;}.kw-card blockquote{font-size:16.5px;}}
+.cur-card .fname{overflow-wrap:anywhere;}
+@media (max-width:860px){.cur-card .smp.cur-name{font-size:19px;min-height:44px;}.cur-card .fname{font-size:13.5px;}}
+footer{margin-top:90px;text-align:center;color:var(--ivory-dim);font-size:12px;letter-spacing:.14em;}
+footer .ornament{margin-bottom:18px;}
+
+a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-offset:3px;border-radius:6px;}
+
+/* スクロールで現れる */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 1.1s cubic-bezier(.2,.7,.2,1),transform 1.1s cubic-bezier(.2,.7,.2,1);}
+.reveal.in{opacity:1;transform:none;}
+.reveal.d1{transition-delay:.12s;}.reveal.d2{transition-delay:.24s;}.reveal.d3{transition-delay:.36s;}
+.no-js .reveal{opacity:1;transform:none;}
+
+/* =========================================================
+   スマホ
+   ========================================================= */
+@media (max-width:860px){
+  .wrap{padding:0 16px 64px;}
+  header.hero-head{padding:84px 0 20px;}
+  .release{grid-template-columns:1fr;gap:38px;padding:36px 22px 30px;}
+  .jacket-stage{width:min(100%,420px);margin:0 auto;}
+  .rel-info{text-align:center;}
+  .eyebrow{justify-content:center;}
+  .eyebrow::before{content:"";height:1px;flex:1;max-width:60px;background:linear-gradient(270deg,var(--brass),transparent);}
+  .eyebrow::after{max-width:60px;}
+  .countdown{margin-left:auto;margin-right:auto;}
+  .cta,.dsp{justify-content:center;}
+  .frame{padding:34px 20px;}
+  .shelf{grid-template-columns:1fr 1fr;gap:22px 14px;max-width:420px;margin:0 auto;}
+  .shelf .slot:first-child{grid-column:1 / -1;max-width:300px;margin:0 auto;width:100%;}
+  .slot .cover.empty .q{font-size:34px;}
+  .slot .cover.empty .cs{font-size:14px;}
+  .profile{grid-template-columns:1fr;gap:30px;}
+  .moon{width:38px;height:38px;right:18px;top:18px;}
+  .moon-halo{width:120px;height:120px;right:-23px;top:-23px;}
+  header.hero-head{padding-top:92px;}
+  .staff{margin-top:66px;height:56px;}
+  .staff .clef{font-size:62px;}
+  details.fold summary{padding:18px 18px;}
+  .fold-body{padding:0 18px 22px;}
+  .terms{padding:18px 18px;}
+  .cn{width:34px;height:34px;}
+  .topbar .in{padding:8px 14px;gap:10px;}
+  .topbar .mark{font-size:19px;}
+  .navlinks a{padding:6px 9px;font-size:12px;letter-spacing:.1em;}
+}
+@media (max-width:420px){
+  .cd .n{font-size:28px;}
+  .countdown{gap:7px;}
+  .btn{padding:12px 22px;font-size:13px;}
+}
+
+/* 動きを減らす設定のときは止める */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{animation:none !important;transition:none !important;}
+  .reveal{opacity:1;transform:none;}
+  #dust,.cursor-glow{display:none;}
+}
+/* ---- 2026-11 追加：次の曲・いま聴ける曲・新着情報・英語の添え書き ---- */
+.en-line{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15.5px;line-height:1.6;color:var(--moon);letter-spacing:.03em;}
+.rel-next{margin-top:22px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 18px;border:1px solid var(--line-brass);border-radius:999px;background:rgba(217,179,108,.06);font-size:13.5px;letter-spacing:.06em;}
+.rel-next .nx{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.32em;color:var(--brass-hi);}
+.rel-next .nd{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--brass-hi);letter-spacing:.06em;}
+.rel-next b{font-family:'Shippori Mincho B1',serif;font-weight:700;color:var(--ivory);letter-spacing:.08em;}
+.rel-next i{font-family:'Cormorant Garamond',serif;color:var(--moon);font-size:15px;}
+.listen{margin:58px auto 0;max-width:760px;text-align:center;}
+.listen .eyebrow{justify-content:center;}
+.listen .eyebrow::before{content:"";height:1px;flex:1;max-width:120px;background:linear-gradient(270deg,var(--brass),transparent);}
+.listen .player{margin-top:18px;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.45),0 0 40px rgba(168,194,232,.10);background:rgba(0,0,0,.25);}
+.listen .player iframe{display:block;width:100%;height:352px;border:0;}
+.listen .en-line{margin-top:10px;font-size:14.5px;}
+.news{list-style:none;margin:0 auto;padding:0;max-width:820px;}
+.news li{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:18px 4px;border-bottom:1px dashed var(--line);}
+.news li:first-child{border-top:1px dashed var(--line);}
+.news time{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--brass-hi);letter-spacing:.06em;padding-top:2px;}
+.news .tag{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:11.5px;letter-spacing:.28em;padding:2px 10px 1px 12px;border-radius:999px;margin-bottom:6px;border:1px solid currentColor;}
+.news .tag.rel{color:var(--brass-hi);} .news .tag.pl{color:var(--moon);} .news .tag.md{color:var(--rose);} .news .tag.ra{color:var(--wisteria);}
+.news .jp{font-size:14.5px;line-height:1.8;color:var(--ivory);}
+.news .en-line{font-size:14.5px;margin-top:2px;}
+.news a.go{display:inline-block;margin-top:6px;font-size:12.5px;letter-spacing:.06em;color:var(--ivory-dim);text-decoration:none;border-bottom:1px solid var(--line-brass);transition:.3s;}
+.news a.go:hover,.news a.go:focus-visible{color:var(--brass-hi);}
+.news-more{max-width:820px;margin:16px auto 0;}
+.news-more summary{cursor:pointer;list-style:none;text-align:center;font-size:13px;letter-spacing:.12em;color:var(--ivory-dim);padding:8px;}
+.news-more summary::-webkit-details-marker{display:none;}
+.news-more summary span{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--moon);margin-left:8px;}
+.news-more[open] summary{color:var(--brass-hi);}
+.news-follow{margin-top:24px;text-align:center;font-size:13.5px;color:var(--ivory-dim);}
+.news-follow a{color:var(--brass-hi);text-decoration:none;border-bottom:1px solid var(--line-brass);}
+.sec-en{text-align:center;margin:-18px auto 26px;max-width:720px;}
+@media (max-width:860px){
+  .news li{grid-template-columns:1fr;gap:4px;padding:16px 2px;}
+  .listen{margin-top:44px;}
+  .listen .player iframe{height:352px;}
+  .rel-next{justify-content:center;}
+}
+/* ---- 2026-11 追加：「Spotify アプリで聴く」ボタン（埋め込みは未ログインだと 30 秒の試聴になり、再生回数に入らないため） ---- */
+.listen .listen-app{margin-top:20px;}
+.listen .la-note{margin-top:10px;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;word-break:keep-all;}
+/* ---- 2026-11 追加：トップの歌詞の欄（曲のページへのリンクだけ）と、Links の VocaDB ---- */
+#lyrics .ly-go{display:flex;align-items:center;gap:16px;padding:18px 24px;border:1px solid var(--line);border-radius:16px;background:var(--card);text-decoration:none;color:var(--ivory);transition:transform .3s,border-color .3s,box-shadow .3s;}
+#lyrics .ly-go:hover,#lyrics .ly-go:focus-visible{transform:translateY(-3px);border-color:var(--line-brass);box-shadow:0 12px 30px rgba(0,0,0,.35),0 0 26px rgba(217,179,108,.15);}
+#lyrics .ly-go .ic{flex-shrink:0;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid var(--line-brass);color:var(--brass-hi);font-size:17px;}
+#lyrics .ly-go .tt{flex:1;font-family:'Shippori Mincho B1',serif;font-size:17px;letter-spacing:.08em;}
+#lyrics .ly-go .tt-en{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--moon);margin-left:4px;}
+#lyrics .ly-go small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;margin-top:2px;}
+#lyrics .ly-go .ly-arrow{color:var(--brass);transition:transform .3s;}
+#lyrics .ly-go:hover .ly-arrow{transform:translateX(4px);}
+.sns-card.vd{grid-column:1 / -1;max-width:420px;width:100%;justify-self:center;}
+.sns-card.vd .s-ic{color:var(--wisteria);background:rgba(154,134,207,.08);box-shadow:0 0 20px rgba(154,134,207,.22);font-size:18px;}
+/* ---- 2026-11 追加：プロフィールの日本語／English 切り替え ---- */
+.lang-switch{display:flex;justify-content:center;gap:8px;margin:-10px auto 30px;}
+.lang-switch button{font:inherit;font-size:13px;letter-spacing:.14em;padding:7px 20px;border-radius:999px;cursor:pointer;
+  background:transparent;color:var(--ivory-dim);border:1px solid var(--line);transition:.3s;}
+.lang-switch button[data-lang="en"]{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.1em;}
+.lang-switch button:hover,.lang-switch button:focus-visible{color:var(--brass-hi);border-color:var(--line-brass);}
+.lang-switch button.on{color:var(--bg);background:linear-gradient(135deg,var(--brass-hi),var(--brass));border-color:transparent;}
+#profile .p-en,#profile .pe{display:none;}
+#profile.is-en .p-ja,#profile.is-en .pj{display:none;}
+#profile.is-en .p-en{display:block;}
+#profile.is-en .pe{display:inline;}
+#profile .p-en p{line-height:1.85;}
+/* ---- 2026-11 追加：歌い手の区画 ---- */
+#vocals .v-en{display:none;}
+#vocals.is-en .v-ja{display:none;}
+#vocals.is-en .v-en{display:block;}
+#vocals .v-intro{text-align:center;font-family:'Shippori Mincho B1',serif;font-size:16px;line-height:2;color:var(--brass-hi);letter-spacing:.04em;}
+#vocals .voices{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:22px;}
+#vocals .v-card{background:rgba(0,0,0,.22);border:1px solid var(--line);border-radius:14px;padding:22px 24px;}
+#vocals .v-card h3{font-family:'Shippori Mincho B1',serif;font-size:18px;letter-spacing:.1em;color:#F3D9A2;margin-bottom:8px;display:flex;align-items:center;gap:10px;}
+#vocals .v-card h3::before{content:"♪";font-family:'Noto Music',serif;color:var(--moon);font-size:15px;}
+#vocals .v-card p{font-size:14.5px;line-height:1.95;color:var(--ivory);}
+#vocals .v-note{margin-top:22px;font-size:13.5px;line-height:1.95;color:var(--ivory-dim);padding:12px 16px;border-radius:10px;border-left:3px solid var(--moon);background:rgba(168,194,232,.06);}
+#vocals .v-future{margin-top:14px;font-size:14.5px;line-height:1.95;color:var(--ivory);}
+#vocals .v-en p{line-height:1.85;}
+/* ---- 2026-11 追加：歌詞の 日本語／Romaji／English 切り替え ---- */
+.tt .tt-en{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:.92em;letter-spacing:.06em;color:var(--moon);margin-left:4px;}
+.lyrics .ly-switch{justify-content:flex-start;margin:0 0 22px;flex-wrap:wrap;}
+.lyrics .ly-switch button[data-lang="ro"]{font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:.1em;}
+.lyrics .ly-ro,.lyrics .ly-en{display:none;}
+.lyrics.is-ro .ly-ja,.lyrics.is-en .ly-ja{display:none;}
+.lyrics.is-ro .ly-ro,.lyrics.is-en .ly-en{display:block;}
+.lyrics .ly-ro .stanza{font-family:'Zen Kaku Gothic New',sans-serif;font-size:15px;line-height:2;letter-spacing:.02em;}
+.lyrics .ly-en .stanza{font-family:'Cormorant Garamond',serif;font-size:19px;line-height:1.75;letter-spacing:.01em;}
+.lyrics .ly-note{font-size:13px;line-height:1.8;color:var(--ivory-dim);margin:-6px 0 18px;padding-left:1em;text-indent:-1em;}
+@media(max-width:640px){.lyrics .ly-en .stanza{font-size:17px;}.lyrics .ly-ro .stanza{font-size:14px;}.lyrics .ly-switch{gap:6px;}.lyrics .ly-switch button{padding:7px 13px;}}
+/* ---- 2026-11 追加：歌詞の折り返しの行を下げて、1行ずつ見分けやすくする ---- */
+.lyrics .stanza .ln{display:block;padding-left:1.2em;text-indent:-1.2em;}
+</style>
+<!-- ---- 2026-11 追加：検索エンジン向けの名札（構造化データ・JSON-LD）。見た目には出ない。曲が出たら MusicRecording を足す ---- -->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "MusicGroup",
+   "@id": "https://luminote-music.com/#artist",
+   "name": "Luminote",
+   "alternateName": "ルミノート",
+   "url": "https://luminote-music.com/",
+   "image": "https://luminote-music.com/img/luminote-wordmark.png",
+   "description": "作詞・作曲・編曲をする日本の作曲家。歌声合成ソフト Synthesizer V の歌声で曲を発表しています。",
+   "genre": [
+    "J-Pop"
+   ],
+   "foundingDate": "2026",
+   "member": {
+    "@id": "https://luminote-music.com/#creator"
+   },
+   "sameAs": [
+    "https://open.spotify.com/artist/327m28B4SJFugxzg1RSynP",
+    "https://music.apple.com/jp/artist/6817654211",
+    "https://music.amazon.co.jp/artists/B0HNZZJ7CB/luminote",
+    "https://music.line.me/webapp/artist/mi000000002d5ccadf",
+    "https://www.youtube.com/@Luminote-music-jp",
+    "https://x.com/luminote_music",
+    "https://vocadb.net/Ar/201091",
+    "https://soundcloud.com/luminote_music",
+    "https://www.nicovideo.jp/user/145421318"
+   ]
+  },
+  {
+   "@type": "Person",
+   "@id": "https://luminote-music.com/#creator",
+   "name": "Luminote",
+   "alternateName": "ルミノート",
+   "url": "https://luminote-music.com/",
+   "jobTitle": "作詞・作曲・編曲"
+  },
+  {
+   "@type": "WebSite",
+   "@id": "https://luminote-music.com/#website",
+   "name": "Luminote 公式サイト",
+   "url": "https://luminote-music.com/",
+   "inLanguage": "ja",
+   "publisher": {
+    "@id": "https://luminote-music.com/#artist"
+   }
+  },
+  {
+   "@type": "MusicRecording",
+   "@id": "https://luminote-music.com/#indigo-eclipse",
+   "name": "藍色エクリプス",
+   "alternateName": [
+    "Indigo Eclipse",
+    "Aiiro Eclipse"
+   ],
+   "byArtist": {
+    "@id": "https://luminote-music.com/#artist"
+   },
+   "isrcCode": "QT66U2638603",
+   "datePublished": "2026-10-23",
+   "duration": "PT2M35S",
+   "inLanguage": "ja",
+   "url": "https://luminote-music.com/indigo-eclipse/",
+   "sameAs": [
+    "https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew",
+    "https://music.apple.com/jp/album/indigo-eclipse-feat-gumi-single/6817728375?i=6817728399",
+    "https://music.youtube.com/watch?v=RNbt59LWqsg",
+    "https://vocadb.net/S/1057920",
+    "https://linkco.re/EQE8z4m7"
+   ],
+   "recordingOf": {
+    "@type": "MusicComposition",
+    "name": "藍色エクリプス",
+    "composer": {
+     "@id": "https://luminote-music.com/#creator"
+    },
+    "lyricist": {
+     "@id": "https://luminote-music.com/#creator"
+    },
+    "inLanguage": "ja"
+   }
+  }
+ ]
+}
+</script>
+</head>
+<body class="no-js">
+
+<!-- ═══ 背景（夜空） ═══ -->
+<div class="sky" aria-hidden="true">
+  <div class="aurora a1"></div><div class="aurora a2"></div><div class="aurora a3"></div><div class="aurora a4"></div>
+  <svg class="starfield" viewBox="0 0 1600 2400" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+    <circle cx="1306.9" cy="1463.0" r="1.89" fill="#D9B36C" opacity="0.53"/><circle cx="563.4" cy="40.2" r="1.96" fill="#EFE8DA" opacity="0.6"/><circle cx="1356.7" cy="2399.7" r="0.89" fill="#EFE8DA" opacity="0.54"/><circle cx="171.6" cy="78.6" r="1.06" fill="#EFE8DA" opacity="0.44"/><circle cx="953.6" cy="1672.7" r="1.06" fill="#EFE8DA" opacity="0.41"/><circle cx="161.4" cy="1501.8" r="1.13" fill="#EFE8DA" opacity="0.56"/><circle class="tw3" cx="1092.2" cy="507.1" r="0.67" fill="#D9B36C" opacity="0.33"/><circle cx="841.6" cy="1133.1" r="1.7" fill="#EFE8DA" opacity="0.33"/><circle cx="720.9" cy="985.9" r="1.08" fill="#EFE8DA" opacity="0.4"/><circle cx="110.2" cy="650.4" r="1.31" fill="#EFE8DA" opacity="0.5"/><circle cx="500.8" cy="1873.8" r="1.29" fill="#EFE8DA" opacity="0.25"/><circle cx="777.9" cy="950.4" r="0.97" fill="#EFE8DA" opacity="0.64"/><circle cx="895.3" cy="850.1" r="0.59" fill="#EFE8DA" opacity="0.29"/><circle cx="1544.1" cy="604.6" r="1.66" fill="#EFE8DA" opacity="0.5"/><circle cx="309.7" cy="785.5" r="0.74" fill="#EFE8DA" opacity="0.65"/><circle cx="944.8" cy="306.1" r="1.96" fill="#EFE8DA" opacity="0.67"/><circle cx="1473.9" cy="882.9" r="1.3" fill="#EFE8DA" opacity="0.38"/><circle cx="334.5" cy="1296.8" r="1.75" fill="#EFE8DA" opacity="0.41"/><circle cx="1418.4" cy="120.2" r="1.85" fill="#EFE8DA" opacity="0.29"/><circle cx="1415.1" cy="1837.9" r="1.52" fill="#EFE8DA" opacity="0.5"/><circle class="tw1" cx="586.7" cy="1221.2" r="1.6" fill="#D9B36C" opacity="0.49"/><circle cx="226.1" cy="577.4" r="1.83" fill="#EFE8DA" opacity="0.6"/><circle cx="1562.7" cy="935.3" r="0.87" fill="#EFE8DA" opacity="0.31"/><circle cx="1503.0" cy="31.7" r="1.74" fill="#EFE8DA" opacity="0.49"/><circle cx="228.1" cy="1351.0" r="1.28" fill="#EFE8DA" opacity="0.74"/><circle cx="51.7" cy="528.0" r="0.9" fill="#EFE8DA" opacity="0.46"/><circle cx="802.0" cy="1790.9" r="1.66" fill="#EFE8DA" opacity="0.48"/><circle class="tw3" cx="389.9" cy="1864.8" r="1.3" fill="#D9B36C" opacity="0.27"/><circle class="tw1" cx="1272.6" cy="271.6" r="1.8" fill="#EFE8DA" opacity="0.31"/><circle class="tw1" cx="859.4" cy="113.8" r="2.03" fill="#EFE8DA" opacity="0.72"/><circle cx="1259.2" cy="1829.4" r="1.8" fill="#EFE8DA" opacity="0.65"/><circle cx="405.2" cy="1425.9" r="1.78" fill="#EFE8DA" opacity="0.31"/><circle class="tw2" cx="353.7" cy="103.4" r="1.04" fill="#EFE8DA" opacity="0.54"/><circle cx="1056.7" cy="1960.2" r="1.62" fill="#EFE8DA" opacity="0.38"/><circle cx="1213.0" cy="443.2" r="2.38" fill="#EFE8DA" opacity="0.6"/><circle class="tw3" cx="613.2" cy="1264.0" r="1.47" fill="#EFE8DA" opacity="0.33"/><circle cx="442.6" cy="530.3" r="2.19" fill="#EFE8DA" opacity="0.37"/><circle cx="1076.4" cy="716.2" r="1.24" fill="#EFE8DA" opacity="0.55"/><circle cx="960.4" cy="1011.9" r="1.62" fill="#EFE8DA" opacity="0.45"/><circle class="tw2" cx="1280.8" cy="1135.4" r="0.61" fill="#EFE8DA" opacity="0.38"/><circle class="tw2" cx="613.4" cy="872.2" r="1.14" fill="#EFE8DA" opacity="0.39"/><circle cx="1205.3" cy="1830.2" r="1.83" fill="#EFE8DA" opacity="0.46"/><circle cx="861.2" cy="1999.9" r="1.85" fill="#EFE8DA" opacity="0.62"/><circle cx="806.8" cy="189.7" r="0.94" fill="#EFE8DA" opacity="0.47"/><circle cx="418.6" cy="1968.9" r="1.31" fill="#EFE8DA" opacity="0.29"/><circle cx="166.2" cy="801.4" r="2.28" fill="#EFE8DA" opacity="0.65"/><circle class="tw1" cx="298.8" cy="287.9" r="2.11" fill="#EFE8DA" opacity="0.36"/><circle cx="71.5" cy="743.7" r="1.07" fill="#EFE8DA" opacity="0.68"/><circle class="tw3" cx="245.4" cy="1460.1" r="1.8" fill="#EFE8DA" opacity="0.68"/><circle cx="1318.3" cy="1806.7" r="0.7" fill="#EFE8DA" opacity="0.57"/><circle class="tw1" cx="1555.0" cy="1916.9" r="1.26" fill="#D9B36C" opacity="0.54"/><circle cx="1347.4" cy="204.7" r="0.82" fill="#EFE8DA" opacity="0.31"/><circle cx="1514.4" cy="389.7" r="2.22" fill="#D9B36C" opacity="0.63"/><circle class="tw3" cx="695.7" cy="2268.0" r="0.8" fill="#EFE8DA" opacity="0.45"/><circle cx="827.5" cy="885.6" r="1.32" fill="#EFE8DA" opacity="0.41"/><circle cx="1455.8" cy="1218.0" r="1.84" fill="#EFE8DA" opacity="0.49"/><circle class="tw2" cx="1382.9" cy="533.4" r="1.22" fill="#EFE8DA" opacity="0.31"/><circle cx="1033.0" cy="764.4" r="1.18" fill="#EFE8DA" opacity="0.26"/><circle cx="852.5" cy="746.8" r="1.55" fill="#EFE8DA" opacity="0.48"/><circle class="tw3" cx="648.9" cy="1548.3" r="0.91" fill="#EFE8DA" opacity="0.67"/><circle class="tw3" cx="692.7" cy="1944.8" r="0.77" fill="#EFE8DA" opacity="0.66"/><circle cx="970.4" cy="778.2" r="0.96" fill="#EFE8DA" opacity="0.66"/><circle class="tw1" cx="1523.0" cy="1701.1" r="0.96" fill="#EFE8DA" opacity="0.6"/><circle class="tw3" cx="1256.8" cy="113.3" r="1.51" fill="#EFE8DA" opacity="0.33"/><circle class="tw2" cx="865.1" cy="1476.7" r="1.06" fill="#EFE8DA" opacity="0.31"/><circle cx="1591.2" cy="34.8" r="1.45" fill="#EFE8DA" opacity="0.41"/><circle class="tw2" cx="38.2" cy="1090.5" r="0.74" fill="#EFE8DA" opacity="0.33"/><circle cx="349.4" cy="624.3" r="1.03" fill="#EFE8DA" opacity="0.73"/><circle class="tw2" cx="1530.9" cy="1599.4" r="0.82" fill="#D9B36C" opacity="0.66"/><circle cx="1192.0" cy="852.5" r="1.02" fill="#D9B36C" opacity="0.62"/><circle cx="703.0" cy="2027.8" r="1.2" fill="#EFE8DA" opacity="0.63"/><circle class="tw1" cx="1548.8" cy="2116.4" r="0.82" fill="#EFE8DA" opacity="0.61"/><circle class="tw3" cx="1096.4" cy="2119.2" r="0.83" fill="#EFE8DA" opacity="0.58"/><circle class="tw3" cx="1247.0" cy="1664.3" r="0.9" fill="#EFE8DA" opacity="0.28"/><circle cx="1229.6" cy="1893.7" r="2.11" fill="#D9B36C" opacity="0.61"/><circle cx="846.3" cy="1713.4" r="1.4" fill="#EFE8DA" opacity="0.33"/><circle cx="566.1" cy="259.2" r="0.95" fill="#EFE8DA" opacity="0.3"/><circle cx="1020.4" cy="1441.8" r="1.69" fill="#EFE8DA" opacity="0.75"/><circle cx="1239.8" cy="1547.2" r="1.56" fill="#EFE8DA" opacity="0.75"/><circle cx="998.6" cy="1989.8" r="1.31" fill="#EFE8DA" opacity="0.32"/><circle cx="684.0" cy="700.5" r="1.36" fill="#EFE8DA" opacity="0.72"/><circle cx="819.6" cy="1388.8" r="1.7" fill="#D9B36C" opacity="0.32"/><circle cx="1387.6" cy="352.6" r="1.64" fill="#EFE8DA" opacity="0.42"/><circle cx="475.9" cy="1177.3" r="0.83" fill="#EFE8DA" opacity="0.56"/><circle class="tw1" cx="465.6" cy="190.7" r="1.33" fill="#EFE8DA" opacity="0.63"/><circle class="tw2" cx="1507.8" cy="1207.1" r="0.7" fill="#EFE8DA" opacity="0.43"/><circle class="tw3" cx="640.7" cy="2248.4" r="1.0" fill="#D9B36C" opacity="0.64"/><circle cx="1014.2" cy="512.9" r="1.58" fill="#EFE8DA" opacity="0.5"/><circle cx="1263.1" cy="1056.3" r="0.74" fill="#EFE8DA" opacity="0.34"/><circle cx="1300.2" cy="19.6" r="1.22" fill="#EFE8DA" opacity="0.61"/><circle cx="1316.0" cy="1424.0" r="0.59" fill="#EFE8DA" opacity="0.73"/><circle cx="34.3" cy="487.0" r="0.78" fill="#D9B36C" opacity="0.38"/><circle class="tw1" cx="1085.5" cy="2323.1" r="1.72" fill="#EFE8DA" opacity="0.64"/><circle cx="412.3" cy="1394.5" r="0.71" fill="#EFE8DA" opacity="0.55"/><circle cx="683.6" cy="249.5" r="1.99" fill="#EFE8DA" opacity="0.7"/><circle cx="917.8" cy="1124.5" r="1.0" fill="#EFE8DA" opacity="0.52"/><circle class="tw3" cx="436.9" cy="2041.2" r="1.0" fill="#EFE8DA" opacity="0.62"/><circle class="tw2" cx="235.0" cy="1181.3" r="0.69" fill="#EFE8DA" opacity="0.49"/><circle cx="258.9" cy="1543.0" r="0.75" fill="#EFE8DA" opacity="0.43"/><circle cx="1020.5" cy="280.1" r="0.96" fill="#EFE8DA" opacity="0.69"/><circle cx="789.1" cy="1606.4" r="0.77" fill="#EFE8DA" opacity="0.32"/><circle class="tw2" cx="137.6" cy="1224.9" r="2.3" fill="#D9B36C" opacity="0.43"/><circle cx="96.8" cy="145.1" r="1.99" fill="#EFE8DA" opacity="0.6"/><circle cx="1334.3" cy="2268.7" r="1.83" fill="#D9B36C" opacity="0.64"/><circle cx="693.8" cy="1098.7" r="1.8" fill="#EFE8DA" opacity="0.34"/><circle cx="894.7" cy="1190.6" r="0.92" fill="#EFE8DA" opacity="0.26"/><circle cx="130.6" cy="1470.3" r="1.35" fill="#EFE8DA" opacity="0.28"/><circle class="tw3" cx="1587.2" cy="508.6" r="1.44" fill="#EFE8DA" opacity="0.35"/><circle cx="851.8" cy="724.1" r="0.69" fill="#EFE8DA" opacity="0.42"/><circle class="tw2" cx="429.3" cy="1086.8" r="1.2" fill="#EFE8DA" opacity="0.45"/><circle class="tw1" cx="604.1" cy="1948.9" r="0.76" fill="#EFE8DA" opacity="0.26"/><circle cx="1253.8" cy="1808.3" r="1.21" fill="#EFE8DA" opacity="0.64"/><circle class="tw2" cx="1364.8" cy="254.9" r="0.89" fill="#EFE8DA" opacity="0.46"/><circle cx="600.7" cy="145.7" r="2.12" fill="#EFE8DA" opacity="0.5"/><circle class="tw1" cx="882.3" cy="2264.4" r="0.81" fill="#EFE8DA" opacity="0.74"/><circle cx="9.9" cy="1168.1" r="0.95" fill="#D9B36C" opacity="0.72"/><circle cx="615.6" cy="591.5" r="1.47" fill="#EFE8DA" opacity="0.54"/><circle class="tw2" cx="30.8" cy="1914.8" r="1.1" fill="#EFE8DA" opacity="0.63"/><circle cx="762.2" cy="1600.9" r="0.63" fill="#D9B36C" opacity="0.33"/><circle cx="149.0" cy="265.5" r="0.84" fill="#EFE8DA" opacity="0.72"/><circle cx="170.1" cy="477.9" r="0.87" fill="#EFE8DA" opacity="0.42"/><circle class="tw1" cx="1422.7" cy="1890.8" r="2.05" fill="#EFE8DA" opacity="0.29"/><circle cx="1254.1" cy="542.9" r="1.99" fill="#EFE8DA" opacity="0.65"/><circle cx="1227.4" cy="232.2" r="2.39" fill="#EFE8DA" opacity="0.4"/><circle class="tw3" cx="1524.6" cy="495.5" r="1.26" fill="#D9B36C" opacity="0.6"/><circle class="tw2" cx="1170.5" cy="684.6" r="1.39" fill="#EFE8DA" opacity="0.44"/><circle class="tw1" cx="769.8" cy="1636.3" r="1.52" fill="#D9B36C" opacity="0.57"/><circle cx="1335.6" cy="1977.9" r="0.63" fill="#EFE8DA" opacity="0.43"/><circle class="tw1" cx="856.3" cy="686.6" r="1.42" fill="#EFE8DA" opacity="0.26"/><circle class="tw2" cx="1539.9" cy="346.2" r="1.88" fill="#EFE8DA" opacity="0.49"/><circle cx="486.5" cy="2004.4" r="1.39" fill="#EFE8DA" opacity="0.69"/><circle class="tw1" cx="988.8" cy="1431.0" r="1.49" fill="#D9B36C" opacity="0.48"/><circle class="tw1" cx="999.4" cy="27.1" r="0.56" fill="#EFE8DA" opacity="0.25"/><circle cx="1366.6" cy="2088.0" r="1.14" fill="#EFE8DA" opacity="0.27"/><circle cx="450.7" cy="1394.7" r="1.31" fill="#EFE8DA" opacity="0.66"/><circle class="tw1" cx="1311.0" cy="710.1" r="1.19" fill="#EFE8DA" opacity="0.41"/><circle class="tw1" cx="740.5" cy="1979.2" r="1.7" fill="#EFE8DA" opacity="0.31"/><circle cx="917.9" cy="580.0" r="1.26" fill="#EFE8DA" opacity="0.7"/><circle class="tw3" cx="447.8" cy="1024.7" r="0.91" fill="#D9B36C" opacity="0.29"/><circle cx="649.7" cy="427.3" r="1.9" fill="#EFE8DA" opacity="0.7"/><circle class="tw3" cx="277.0" cy="944.0" r="1.5" fill="#EFE8DA" opacity="0.52"/><circle cx="339.2" cy="569.6" r="1.07" fill="#EFE8DA" opacity="0.66"/><circle class="tw3" cx="840.3" cy="1932.5" r="2.04" fill="#EFE8DA" opacity="0.64"/><circle class="tw2" cx="789.8" cy="429.2" r="0.73" fill="#EFE8DA" opacity="0.35"/><circle cx="1507.4" cy="683.7" r="1.46" fill="#D9B36C" opacity="0.64"/><circle cx="1175.2" cy="2129.6" r="2.2" fill="#EFE8DA" opacity="0.69"/><circle cx="276.3" cy="1672.9" r="1.05" fill="#EFE8DA" opacity="0.54"/><circle cx="1268.0" cy="1243.3" r="1.02" fill="#EFE8DA" opacity="0.38"/><circle cx="1395.7" cy="1545.4" r="1.95" fill="#EFE8DA" opacity="0.59"/><circle class="tw1" cx="1182.5" cy="1329.1" r="1.38" fill="#EFE8DA" opacity="0.45"/><path class="tw2" d="M 1251.9 1444.3880566465355 L 1253.3421498036237 1450.9578501963765 L 1259.9119433534647 1452.4 L 1253.3421498036237 1453.8421498036237 L 1251.9 1460.4119433534647 L 1250.4578501963765 1453.8421498036237 L 1243.8880566465355 1452.4 L 1250.4578501963765 1450.9578501963765 Z" fill="#EFE8DA" opacity="0.5"/><path class="tw3" d="M 652.3 2135.121266154305 L 653.520172092225 2140.679827907775 L 659.0787338456951 2141.9 L 653.520172092225 2143.1201720922254 L 652.3 2148.678733845695 L 651.0798279077749 2143.1201720922254 L 645.5212661543048 2141.9 L 651.0798279077749 2140.679827907775 Z" fill="#EFE8DA" opacity="0.5"/><path class="tw2" d="M 532.9 1921.8235742950262 L 534.3357566268952 1928.3642433731047 L 540.8764257049738 1929.8 L 534.3357566268952 1931.2357566268952 L 532.9 1937.7764257049737 L 531.4642433731048 1931.2357566268952 L 524.9235742950261 1929.8 L 531.4642433731048 1928.3642433731047 Z" fill="#EFE8DA" opacity="0.5"/><path class="tw3" d="M 253.2 636.3571519803754 L 254.28771264353242 641.3122873564676 L 259.24284801962455 642.4 L 254.28771264353242 643.4877126435324 L 253.2 648.4428480196245 L 252.11228735646756 643.4877126435324 L 247.15715198037543 642.4 L 252.11228735646756 641.3122873564676 Z" fill="#EFE8DA" opacity="0.5"/><path class="tw2" d="M 374.8 2091.8257256524744 L 375.8033693825546 2096.3966306174457 L 380.3742743475256 2097.4 L 375.8033693825546 2098.4033693825545 L 374.8 2102.974274347526 L 373.79663061744543 2098.4033693825545 L 369.2257256524744 2097.4 L 373.79663061744543 2096.3966306174457 Z" fill="#EFE8DA" opacity="0.5"/><path class="tw2" d="M 635.5 643.7898640194454 L 636.7258244764998 649.3741755235002 L 642.3101359805546 650.6 L 636.7258244764998 651.8258244764999 L 635.5 657.4101359805546 L 634.2741755235002 651.8258244764999 L 628.6898640194454 650.6 L 634.2741755235002 649.3741755235002 Z" fill="#EFE8DA" opacity="0.5"/>
+  </svg>
+  <canvas id="dust"></canvas>
+  <div class="moon-halo"></div>
+  <div class="moon" id="moon"></div>
+</div>
+<div class="cursor-glow" id="cglow" aria-hidden="true"></div>
+
+<!-- ═══ 上に張り付くナビ ═══ -->
+<div class="topbar" id="topbar">
+  <div class="in">
+    <a class="mark" href="#top">Luminote</a>
+    <nav class="navlinks" aria-label="ページ内リンク">
+      <a href="#release">New Single</a>
+      <a href="#news">News</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#discography">Discography</a>
+      <a href="#profile">Profile</a>
+      <a href="#vocals">Vocals</a>
+      <a href="#offvocal">Off-Vocal</a>
+      <a href="#links">Links</a>
+      <a href="#contact">Contact</a>
+      <a href="#thanks">Thanks</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap" id="top">
+
+  <header class="hero-head">
+    <div class="wm-box">
+      <img class="wordmark-img" id="wm" src="img/luminote-wordmark.png" alt="Luminote">
+      <div class="wm-shine" id="wmshine" aria-hidden="true"></div>
+    </div>
+    <div class="role">M U S I C</div>
+    <div class="subrole">作詞・作曲・編曲</div>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <nav class="inline" aria-label="ページ内リンク">
+      <a href="#release">New Single</a>
+      <a href="#news">News</a>
+      <a href="#lyrics">Lyrics</a>
+      <a href="#discography">Discography</a>
+      <a href="#profile">Profile</a>
+      <a href="#vocals">Vocals</a>
+      <a href="#offvocal">Off-Vocal</a>
+      <a href="#links">Links</a>
+      <a href="#contact">Contact</a>
+      <a href="#thanks">Thanks</a>
+    </nav>
+  </header>
+
+  <!-- ═══ 新曲（最上段） ═══ -->
+  <section id="release" class="release reveal" aria-labelledby="rel-title">
+    <div class="jacket-stage">
+      <div class="jacket-halo" aria-hidden="true"></div>
+      <div class="jacket-ring" aria-hidden="true"></div>
+      <div class="jacket-ring r2" aria-hidden="true"></div>
+      <div class="jacket" id="jacket"><img src="img/rainbow-unicorn.jpg" alt="レインボー★ユニコーン♪ ジャケット" width="1000" height="1000"></div>
+    </div>
+    <div class="rel-info">
+      <div class="eyebrow">NEW SINGLE</div>
+      <h2 class="rel-title" id="rel-title" style="word-break:keep-all">レインボー★<wbr>ユニコーン♪</h2>
+      <div class="rel-en">Rainbow Unicorn</div>
+      <div class="rel-artist"><b>Luminote</b> feat. GUMI &amp; 小春六花</div>
+      <div class="rel-date"><span class="d">2026.11.21</span><span class="t">土曜日 配信</span></div>
+
+      <div class="cd-label" id="cd-label">配信開始まで <span class="en-line">Release in</span></div>
+      <div class="countdown" id="countdown" aria-live="off">
+        <div class="cd"><div class="n" data-k="d">--</div><div class="u">日</div></div>
+        <div class="cd"><div class="n" data-k="h">--</div><div class="u">時間</div></div>
+        <div class="cd"><div class="n" data-k="m">--</div><div class="u">分</div></div>
+        <div class="cd"><div class="n" data-k="s">--</div><div class="u">秒</div></div>
+      </div>
+
+      <div class="cta" id="cta"></div>
+      <p class="rel-note" id="rel-note"></p>
+      <div class="dsp" id="dsp"></div>
+      <div class="rel-next"><span class="nx">NEXT</span><span class="nd">2026.11.28</span><b>弾ける衝動</b><i>Erumpe, Stella!</i></div>
+    </div>
+  </section>
+
+  <!-- ═══ いま聴ける曲（Spotify） ═══ -->
+  <section id="listen" class="listen reveal" aria-label="いま聴ける曲">
+    <div class="eyebrow">LISTEN NOW</div>
+    <div class="player">
+      <iframe title="Spotify で Luminote を聴く" src="https://open.spotify.com/embed/artist/327m28B4SJFugxzg1RSynP?utm_source=generator&amp;theme=0" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="listen-app">
+      <a class="btn" href="https://open.spotify.com/artist/327m28B4SJFugxzg1RSynP" target="_blank" rel="noopener">♪ Spotify アプリで聴く</a>
+      <p class="la-note">ここで流れるのが 30 秒だけのときは、<wbr>アプリで全曲を聴けます。</p>
+    </div>
+    <p class="en-line">Listen to Luminote on Spotify — more songs are on the way.</p>
+  </section>
+
+  <!-- ═══ 新着情報 ═══ -->
+  <section id="news" class="frame reveal">
+    <h2 class="sec">新着情報<span class="en">NEWS</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <ul class="news">
+      <li><time datetime="2026-11-12">2026.11.12</time><div>
+        <span class="tag ra">RADIO</span>
+        <p class="jp">ウガンダの Ejazz Radio で、DJ Mark-Xtreme さんの番組に「藍色エクリプス」が流れます（日本時間 19:00〜21:00）。</p>
+        <p class="en-line">"Indigo Eclipse" will be played on Ejazz Radio (Uganda) by DJ Mark-Xtreme, 19:00–21:00 JST.</p>
+        <a class="go" href="http://radio.ejazzug.com/" target="_blank" rel="noopener">Ejazz Radio →</a>
+      </div></li>
+      <li><time datetime="2026-11-11">2026.11.11</time><div>
+        <span class="tag rel">RELEASE</span>
+        <p class="jp">2作目「レインボー★ユニコーン♪」を 11月21日（土）、3作目「弾ける衝動」を 11月28日（土）に配信する予定です。</p>
+        <p class="en-line">New singles "Rainbow Unicorn" (Nov 21) and "Erumpe, Stella!" (Nov 28) are coming soon.</p>
+        <a class="go" href="#release">New Single →</a>
+      </div></li>
+      <li><time datetime="2026-11-10">2026.11.10</time><div>
+        <span class="tag md">MEDIA</span>
+        <p class="jp">インドネシアの音楽ブログ ParaPOP に、「藍色エクリプス」の紹介記事が載りました。</p>
+        <p class="en-line">ParaPOP (Indonesia) featured "Indigo Eclipse" in an article.</p>
+        <a class="go" href="https://parapop.net/luminote-indigo-eclipse-feat-gumi/" target="_blank" rel="noopener">ParaPOP →</a>
+      </div></li>
+      <li><time datetime="2026-11-10">2026.11.10</time><div>
+        <span class="tag pl">PLAYLIST</span>
+        <p class="jp">ブラジルの oficialTUNE の Spotify プレイリスト「TUNE Mood」に、「藍色エクリプス」が加わりました。</p>
+        <p class="en-line">"Indigo Eclipse" was added to "TUNE Mood" by oficialTUNE (Brazil).</p>
+        <a class="go" href="https://open.spotify.com/playlist/49ui6vXc3umclgVgJsziRV" target="_blank" rel="noopener">TUNE Mood →</a>
+      </div></li>
+      <li><time datetime="2026-11-10">2026.11.10</time><div>
+        <span class="tag pl">PLAYLIST</span>
+        <p class="jp">ラテンアメリカの音楽メディア Zonagirante.com の Spotify プレイリスト「Sonidos novedosos」に、「藍色エクリプス」が加わりました。</p>
+        <p class="en-line">"Indigo Eclipse" was added to "Sonidos novedosos" by Zonagirante.com (Latin America).</p>
+        <a class="go" href="https://open.spotify.com/playlist/507IxZmTFrf2oU7eY0PPUl" target="_blank" rel="noopener">Sonidos novedosos →</a>
+      </div></li>
+    </ul>
+    <details class="news-more">
+      <summary>以前のお知らせ<span>Older news</span></summary>
+      <ul class="news">
+        <li><time datetime="2026-11-09">2026.11.09</time><div>
+          <span class="tag pl">PLAYLIST</span>
+          <p class="jp">ナイジェリアのキュレーター Dreams studio の Spotify プレイリスト「Tokyo to Paris: J-Pop x French Rap Vibes」に、「藍色エクリプス」が加わりました。</p>
+          <p class="en-line">"Indigo Eclipse" was added to "Tokyo to Paris: J-Pop x French Rap Vibes" by Dreams studio (Nigeria).</p>
+          <a class="go" href="https://open.spotify.com/playlist/3bmn7jZodchlsoMfyB9G1Z" target="_blank" rel="noopener">Tokyo to Paris →</a>
+        </div></li>
+        <li><time datetime="2026-10-23">2026.10.23</time><div>
+          <span class="tag rel">RELEASE</span>
+          <p class="jp">1作目「藍色エクリプス」を配信しました。</p>
+          <p class="en-line">Debut single "Indigo Eclipse" is out now.</p>
+          <a class="go" href="https://linkco.re/EQE8z4m7" target="_blank" rel="noopener">Listen →</a>
+        </div></li>
+      </ul>
+    </details>
+    <p class="news-follow">最新のお知らせは X（Twitter）でも。 <a href="https://x.com/luminote_music" target="_blank" rel="noopener">@luminote_music</a></p>
+  </section>
+
+  <!-- ═══ 歌詞（本文は曲のページへ移した・2026-11） ═══ -->
+  <section id="lyrics" class="reveal">
+    <a class="ly-go" href="/indigo-eclipse/#lyrics">
+      <span class="ic music" aria-hidden="true">♪</span>
+      <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small style="word-break:keep-all">藍色エクリプス (feat. GUMI)　／　<wbr>日本語・Romaji・English</small></span>
+      <span class="ly-arrow" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <!-- 五線の帯 -->
+  <div class="staff reveal" aria-hidden="true"><svg viewBox="0 0 900 70" preserveAspectRatio="none"><defs><linearGradient id="sg1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="0"><stop offset="0" stop-color="#D9B36C" stop-opacity="0"/><stop offset=".12" stop-color="#D9B36C" stop-opacity=".55"/><stop offset=".5" stop-color="#A8C2E8" stop-opacity=".45"/><stop offset=".88" stop-color="#D9B36C" stop-opacity=".55"/><stop offset="1" stop-color="#D9B36C" stop-opacity="0"/></linearGradient></defs><line x1="0" y1="15" x2="900" y2="15" stroke="url(#sg1)" stroke-width="1"/><line x1="0" y1="25" x2="900" y2="25" stroke="url(#sg1)" stroke-width="1"/><line x1="0" y1="35" x2="900" y2="35" stroke="url(#sg1)" stroke-width="1"/><line x1="0" y1="45" x2="900" y2="45" stroke="url(#sg1)" stroke-width="1"/><line x1="0" y1="55" x2="900" y2="55" stroke="url(#sg1)" stroke-width="1"/><line class="glint g1" x1="0" y1="25" x2="900" y2="25" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g2" x1="0" y1="35" x2="900" y2="35" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g3" x1="0" y1="45" x2="900" y2="45" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><g class="note" opacity=".75"><ellipse cx="170" cy="40" rx="5.6" ry="4" transform="rotate(-20 170 40)" fill="#F3D9A2"/><line x1="175.2" y1="40" x2="175.2" y2="16" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="252" cy="35" rx="5.6" ry="4" transform="rotate(-20 252 35)" fill="#EFE8DA"/><line x1="246.8" y1="35" x2="246.8" y2="59" stroke="#EFE8DA" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="307" cy="25" rx="5.6" ry="4" transform="rotate(-20 307 25)" fill="#9A86CF"/><line x1="301.8" y1="25" x2="301.8" y2="49" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="393" cy="50" rx="5.6" ry="4" transform="rotate(-20 393 50)" fill="#D7A0B4"/><line x1="398.2" y1="50" x2="398.2" y2="26" stroke="#D7A0B4" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="458" cy="20" rx="5.6" ry="4" transform="rotate(-20 458 20)" fill="#EFE8DA"/><line x1="452.8" y1="20" x2="452.8" y2="44" stroke="#EFE8DA" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="544" cy="30" rx="5.6" ry="4" transform="rotate(-20 544 30)" fill="#F3D9A2"/><line x1="538.8" y1="30" x2="538.8" y2="54" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="614" cy="45" rx="5.6" ry="4" transform="rotate(-20 614 45)" fill="#D7A0B4"/><line x1="619.2" y1="45" x2="619.2" y2="21" stroke="#D7A0B4" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="671" cy="35" rx="5.6" ry="4" transform="rotate(-20 671 35)" fill="#A8C2E8"/><line x1="665.8" y1="35" x2="665.8" y2="59" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="764" cy="30" rx="5.6" ry="4" transform="rotate(-20 764 30)" fill="#9A86CF"/><line x1="758.8" y1="30" x2="758.8" y2="54" stroke="#9A86CF" stroke-width="1.1"/></g></svg><div class="clef music">𝄞</div></div>
+
+  <!-- ═══ ディスコグラフィ ═══ -->
+  <section id="discography" class="frame reveal">
+    <h2 class="sec">ディスコグラフィ<span class="en">DISCOGRAPHY</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <div class="shelf">
+      <div class="slot reveal d1">
+        <a href="/indigo-eclipse/" class="cover" style="display:block"><img src="img/indigo-eclipse.jpg" alt="藍色エクリプス（曲のページへ）" loading="lazy"></a>
+        <div class="no">No. 01</div>
+        <h3><a href="/indigo-eclipse/" style="color:inherit;text-decoration:none">藍色エクリプス</a></h3>
+        <div class="meta">Indigo Eclipse ／ 2026.10.23 配信</div>
+      </div>
+      <div class="slot reveal d2">
+        <div class="cover"><img src="img/rainbow-unicorn.jpg" alt="レインボー★ユニコーン♪" loading="lazy"></div>
+        <div class="no">No. 02</div>
+        <h3>レインボー★ユニコーン♪</h3>
+        <div class="meta">Rainbow Unicorn ／ 2026.11.21 配信予定</div>
+      </div>
+      <div class="slot reveal d3">
+        <div class="cover"><img src="img/erumpe-stella.jpg" alt="弾ける衝動" loading="lazy"></div>
+        <div class="no">No. 03</div>
+        <h3>弾ける衝動</h3>
+        <div class="meta">Erumpe, Stella! ／ 2026.11.28 配信予定</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="staff reveal" aria-hidden="true"><svg viewBox="0 0 900 70" preserveAspectRatio="none"><defs><linearGradient id="sg2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="0"><stop offset="0" stop-color="#D9B36C" stop-opacity="0"/><stop offset=".12" stop-color="#D9B36C" stop-opacity=".55"/><stop offset=".5" stop-color="#A8C2E8" stop-opacity=".45"/><stop offset=".88" stop-color="#D9B36C" stop-opacity=".55"/><stop offset="1" stop-color="#D9B36C" stop-opacity="0"/></linearGradient></defs><line x1="0" y1="15" x2="900" y2="15" stroke="url(#sg2)" stroke-width="1"/><line x1="0" y1="25" x2="900" y2="25" stroke="url(#sg2)" stroke-width="1"/><line x1="0" y1="35" x2="900" y2="35" stroke="url(#sg2)" stroke-width="1"/><line x1="0" y1="45" x2="900" y2="45" stroke="url(#sg2)" stroke-width="1"/><line x1="0" y1="55" x2="900" y2="55" stroke="url(#sg2)" stroke-width="1"/><line class="glint g1" x1="0" y1="25" x2="900" y2="25" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g2" x1="0" y1="35" x2="900" y2="35" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g3" x1="0" y1="45" x2="900" y2="45" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><g class="note" opacity=".75"><ellipse cx="170" cy="40" rx="5.6" ry="4" transform="rotate(-20 170 40)" fill="#9A86CF"/><line x1="175.2" y1="40" x2="175.2" y2="16" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="244" cy="30" rx="5.6" ry="4" transform="rotate(-20 244 30)" fill="#D7A0B4"/><line x1="238.8" y1="30" x2="238.8" y2="54" stroke="#D7A0B4" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="310" cy="50" rx="5.6" ry="4" transform="rotate(-20 310 50)" fill="#EFE8DA"/><line x1="315.2" y1="50" x2="315.2" y2="26" stroke="#EFE8DA" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="382" cy="20" rx="5.6" ry="4" transform="rotate(-20 382 20)" fill="#F3D9A2"/><line x1="376.8" y1="20" x2="376.8" y2="44" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="452" cy="35" rx="5.6" ry="4" transform="rotate(-20 452 35)" fill="#9A86CF"/><line x1="446.8" y1="35" x2="446.8" y2="59" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="523" cy="50" rx="5.6" ry="4" transform="rotate(-20 523 50)" fill="#EFE8DA"/><line x1="528.2" y1="50" x2="528.2" y2="26" stroke="#EFE8DA" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="598" cy="45" rx="5.6" ry="4" transform="rotate(-20 598 45)" fill="#9A86CF"/><line x1="603.2" y1="45" x2="603.2" y2="21" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="661" cy="40" rx="5.6" ry="4" transform="rotate(-20 661 40)" fill="#F3D9A2"/><line x1="666.2" y1="40" x2="666.2" y2="16" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="724" cy="50" rx="5.6" ry="4" transform="rotate(-20 724 50)" fill="#A8C2E8"/><line x1="729.2" y1="50" x2="729.2" y2="26" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="788" cy="45" rx="5.6" ry="4" transform="rotate(-20 788 45)" fill="#EFE8DA"/><line x1="793.2" y1="45" x2="793.2" y2="21" stroke="#EFE8DA" stroke-width="1.1"/></g></svg><div class="clef music">𝄞</div></div>
+
+  <!-- ═══ プロフィール ═══ -->
+  <section id="profile" class="frame reveal">
+    <h2 class="sec">プロフィール<span class="en">PROFILE</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <div class="lang-switch" role="group" aria-label="言語 / Language">
+      <button type="button" class="on" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <div class="profile">
+      <div class="p-side">
+        <div class="p-emblem" aria-hidden="true"><span class="clef music">𝄞</span></div>
+        <div class="p-name">Luminote</div>
+        <div class="p-kana">ルミノート</div>
+        <div class="p-role"><span class="pj">作詞・作曲・編曲</span><span class="pe" lang="en">Lyricist · Composer · Arranger</span></div>
+      </div>
+      <div class="p-body">
+       <div class="p-ja">
+        <p class="lead">Luminote（ルミノート）です。作詞・作曲・編曲をしています。</p>
+        <p>1歳からピアノを弾いてきた、作曲歴20年以上の職業作曲家です。全国規模の作曲コンテストで<b class="hl2">最優秀賞</b>、編曲賞、部門賞などを受賞し、10代から歌ものやBGMの委嘱作曲を続けてきました。これまでにゲーム・アニメの主題歌や劇中歌、ゲーム音楽、YouTuber・VTuber・アーティストへの楽曲提供、アーティスト自作曲の編曲やオーケストレーション、校歌の作詞・作曲を担当してきました。作家名を出さない形での楽曲提供（いわゆるゴーストライティング）も行ってきました。現在のお仕事は、すべてLuminoteの名前でお受けしています。作曲・編曲は150曲、採譜は200曲を超えます。</p>
+        <p>得意とするのは、女性ボーカルのアニメソングやJ-POP、ゲームや映像の劇伴です。絶対音感を持ち、ピアノ講師として教えていた時期もあります。作詞から作曲・編曲・演奏・ミックス・マスタリングまでを一人で行い、そのまま配信できる音源に仕上げます。</p>
+        <p>2026年、依頼ではなく作りたい音楽を自分の名前で届けるため、レーベル「POIKILIA」を立ち上げ、Luminoteとしての活動を始めました。現在はどの事務所にも所属せず、フリーで活動しています。<span class="pledge">Luminoteの曲は、詞もメロディもアレンジも、AIを使わずにすべて自分の手で書いています。</span></p>
+        <p><span id="pf-rel">1作目「藍色エクリプス」を10月23日に配信しました。11月には「レインボー★ユニコーン♪」（21日）と「弾ける衝動」（28日）を配信します。</span>新曲は今後も随時発表していきます。歌い手さんやVTuber・VSingerの方、イラストレーターの方とも、これから交流を広げていきたいと思っています。</p>
+       </div>
+       <div class="p-en" lang="en">
+        <p class="lead">I'm Luminote — a lyricist, composer and arranger.</p>
+        <p>I'm a professional composer with more than 20 years of composing, and I have played the piano since I was one. I won the <b class="hl2">grand prize</b>, an arrangement award and a category award, among others, at a nationwide composition contest, and I have been writing commissioned songs and background music since my teens. My work includes theme songs and insert songs for games and anime, game music, songs for YouTubers, VTubers and artists, arrangements and orchestrations of artists' own songs, and the lyrics and music of a school song. I have also written music released without my name (so-called ghostwriting). Today, I take on all work under the name Luminote. I have composed and arranged more than 150 songs and transcribed more than 200.</p>
+        <p>My specialties are anime songs and J-pop for female vocalists, and scores for games and film. I have absolute pitch, and I have also taught piano. I handle everything myself — lyrics, composition, arrangement, performance, mixing and mastering — and deliver tracks that are ready for release.</p>
+        <p>In 2026, I launched the label POIKILIA and began working as Luminote, to release the music I truly want to make — not commissions — under my own name. I'm not signed to any agency and work independently.<span class="pledge">Luminote's songs — lyrics, melodies and arrangements — are all written by hand, without AI.</span></p>
+        <p>My first single, "Indigo Eclipse," came out on October 23. In November, "Rainbow Unicorn" (November 21) and "Erumpe, Stella!" (November 28) will follow, and more new songs are on the way. I'd love to connect with singers, VTubers, VSingers and illustrators.</p>
+       </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 歌い手 ═══ -->
+  <section id="vocals" class="frame reveal">
+    <h2 class="sec">歌い手<span class="en">VOCALS</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <div class="lang-switch" role="group" aria-label="言語 / Language">
+      <button type="button" class="on" data-lang="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+    <div class="v-ja">
+      <p class="v-intro">Luminote の歌は、歌声合成ソフト「Synthesizer V」の歌い手たちが歌っています。</p>
+      <div class="voices">
+        <div class="v-card"><h3>GUMI</h3><p>Luminote のメインボーカル。「藍色エクリプス」「レインボー★ユニコーン♪」「弾ける衝動」を歌っています。</p></div>
+        <div class="v-card"><h3>小春六花</h3><p>「レインボー★ユニコーン♪」で GUMI と一緒に歌い、「弾ける衝動」ではハモリを担当しています。</p></div>
+      </div>
+      <p class="v-note">Synthesizer V は歌声を合成するソフトで、AI が曲や歌詞を作る「生成型」の作曲ツールではありません。歌詞と音符は、私が鍵盤で演奏しています。</p>
+      <p class="v-future">これから、歌手やボーカリスト、VTuber・VSinger など、歌い手の皆さんとも交流を深めていければと思っています。</p>
+    </div>
+    <div class="v-en" lang="en">
+      <p class="v-intro">Luminote's songs are sung by the voices of the singing synthesizer Synthesizer V.</p>
+      <div class="voices">
+        <div class="v-card"><h3>GUMI</h3><p>Luminote's lead vocalist, singing "Indigo Eclipse," "Rainbow Unicorn" and "Erumpe, Stella!"</p></div>
+        <div class="v-card"><h3>Koharu Rikka</h3><p>Sings alongside GUMI on "Rainbow Unicorn" and adds the harmonies on "Erumpe, Stella!"</p></div>
+      </div>
+      <p class="v-note">Synthesizer V is a singing voice synthesizer — not a generative AI tool that writes songs or lyrics. I play every lyric and note myself on the keyboard.</p>
+      <p class="v-future">I also hope to get to know more singers, vocalists, VTubers and VSingers.</p>
+    </div>
+  </section>
+
+  <div class="staff reveal" aria-hidden="true"><svg viewBox="0 0 900 70" preserveAspectRatio="none"><defs><linearGradient id="sg3" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="900" y2="0"><stop offset="0" stop-color="#D9B36C" stop-opacity="0"/><stop offset=".12" stop-color="#D9B36C" stop-opacity=".55"/><stop offset=".5" stop-color="#A8C2E8" stop-opacity=".45"/><stop offset=".88" stop-color="#D9B36C" stop-opacity=".55"/><stop offset="1" stop-color="#D9B36C" stop-opacity="0"/></linearGradient></defs><line x1="0" y1="15" x2="900" y2="15" stroke="url(#sg3)" stroke-width="1"/><line x1="0" y1="25" x2="900" y2="25" stroke="url(#sg3)" stroke-width="1"/><line x1="0" y1="35" x2="900" y2="35" stroke="url(#sg3)" stroke-width="1"/><line x1="0" y1="45" x2="900" y2="45" stroke="url(#sg3)" stroke-width="1"/><line x1="0" y1="55" x2="900" y2="55" stroke="url(#sg3)" stroke-width="1"/><line class="glint g1" x1="0" y1="25" x2="900" y2="25" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g2" x1="0" y1="35" x2="900" y2="35" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><line class="glint g3" x1="0" y1="45" x2="900" y2="45" stroke="#F3D9A2" stroke-width="1.4" stroke-linecap="round"/><g class="note" opacity=".75"><ellipse cx="170" cy="45" rx="5.6" ry="4" transform="rotate(-20 170 45)" fill="#9A86CF"/><line x1="175.2" y1="45" x2="175.2" y2="21" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="262" cy="25" rx="5.6" ry="4" transform="rotate(-20 262 25)" fill="#A8C2E8"/><line x1="256.8" y1="25" x2="256.8" y2="49" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="327" cy="25" rx="5.6" ry="4" transform="rotate(-20 327 25)" fill="#A8C2E8"/><line x1="321.8" y1="25" x2="321.8" y2="49" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="387" cy="45" rx="5.6" ry="4" transform="rotate(-20 387 45)" fill="#A8C2E8"/><line x1="392.2" y1="45" x2="392.2" y2="21" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="460" cy="45" rx="5.6" ry="4" transform="rotate(-20 460 45)" fill="#F3D9A2"/><line x1="465.2" y1="45" x2="465.2" y2="21" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="543" cy="35" rx="5.6" ry="4" transform="rotate(-20 543 35)" fill="#F3D9A2"/><line x1="537.8" y1="35" x2="537.8" y2="59" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="599" cy="40" rx="5.6" ry="4" transform="rotate(-20 599 40)" fill="#A8C2E8"/><line x1="604.2" y1="40" x2="604.2" y2="16" stroke="#A8C2E8" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="685" cy="45" rx="5.6" ry="4" transform="rotate(-20 685 45)" fill="#9A86CF"/><line x1="690.2" y1="45" x2="690.2" y2="21" stroke="#9A86CF" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="759" cy="35" rx="5.6" ry="4" transform="rotate(-20 759 35)" fill="#F3D9A2"/><line x1="753.8" y1="35" x2="753.8" y2="59" stroke="#F3D9A2" stroke-width="1.1"/></g><g class="note" opacity=".75"><ellipse cx="830" cy="50" rx="5.6" ry="4" transform="rotate(-20 830 50)" fill="#EFE8DA"/><line x1="835.2" y1="50" x2="835.2" y2="26" stroke="#EFE8DA" stroke-width="1.1"/></g></svg><div class="clef music">𝄞</div></div>
+
+  <!-- ═══ オフボーカル配布（配布物ができるまで畳んでおく） ═══ -->
+  <section id="offvocal" class="reveal">
+    <details class="fold">
+      <summary>
+        <span class="ic music" aria-hidden="true">♩</span>
+        <span class="tt">オフボーカル音源の配布<small>歌ってみた・演奏してみた用の音源と利用条件　／　Free off-vocal tracks for covers</small></span>
+        <span class="chev" aria-hidden="true"></span>
+      </summary>
+      <div class="fold-body">
+        <p class="note">
+          配信中の楽曲のオフボーカル（カラオケ）音源を、このページで無料配布します。
+          下記の利用条件の範囲で、どなたでもご利用いただけます。
+          音源は各楽曲のリリース後、順次こちらに追加します。
+        </p>
+        <p class="en-line">Free off-vocal (karaoke) tracks for covers. Please credit "Music: Luminote" with a link to this site or the original video. Re-distributing or selling the track itself, or uploading it to streaming services, is not allowed.</p>
+        <ul class="dl-list">
+          <li>
+            <span class="dl-tx"><b>藍色エクリプス (feat. GUMI)</b><small>オフボーカル ／ MP3 320kbps ／ 2026-10-23 配信</small></span>
+            <a class="btn" href="https://u.pcloud.link/publink/show?code=XZB0AuJZcG1fSRLltjJlmWFRmq4PC0p6Dkd7" target="_blank" rel="noopener">♩ ダウンロード</a>
+          </li>
+        </ul>
+        <div class="terms">
+          <h3>─ 利用条件 ─</h3>
+          <ol>
+            <li>歌唱・演奏などを重ねた動画・音声作品の制作と、動画サイト・SNS等への投稿にご利用いただけます。収益化を伴う投稿も可能です。</li>
+            <li>作品の概要欄等に、クレジットとして「音源：Luminote」の表記と、本サイトまたは元動画へのリンクをお願いします。</li>
+            <li>音源そのものの再配布・販売、および音楽配信サービス（Spotify・Apple Music等）への登録はできません。</li>
+            <li>公序良俗に反する内容、第三者の権利を侵害する内容、特定の個人・団体への攻撃を目的とする内容へのご利用はお断りします。</li>
+            <li>上記以外の利用（企業・商業案件での利用、放送での利用など）は、下記の連絡先まで事前にご相談ください。</li>
+            <li>YouTubeに投稿すると、「著作権の申し立て」が自動で表示されることがあります。楽曲を盗用の追跡のために登録しているためで、動画が消されたりチャンネルに影響が出たりすることはありません。ご自身で収益化したい場合は、YouTubeの画面から「異議申し立て」をしてください。確認のうえ解除します。</li>
+          </ol>
+          <p class="fine">※ 本条件は予告なく改定することがあります。改定前の投稿には、投稿時点の条件が適用されます。</p>
+        </div>
+        <div class="report">
+          <h3>♪ 歌ってくれたら、ぜひ聴かせてください</h3>
+          <p>投稿したら、X の <a href="https://x.com/luminote_music" target="_blank" rel="noopener">@luminote_music</a> にリプライ（DMでも大丈夫です）でURLを送ってください。全部、必ず聴きに行きます！</p>
+          <p class="sub">（楽曲のコラボや有償のご案件のご相談をさせていただくきっかけにもなればと思っています🎵 たとえば、新曲のメインボーカルや、非公開コンペに出す仮歌など。）</p>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <!-- ═══ リンク（SNS） ═══ -->
+  <section id="links" class="frame reveal">
+    <h2 class="sec">リンク<span class="en">LINKS</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <p class="links-lead">新しい曲の配信や動画の公開は、YouTubeとXでお知らせします。<br><span class="en-line">Follow on YouTube and X for new releases.</span></p>
+    <div class="sns">
+      <a class="sns-card yt" href="https://www.youtube.com/@Luminote-music-jp" target="_blank" rel="noopener">
+        <span class="s-ic" aria-hidden="true">▶︎</span>
+        <span class="s-tx"><b>YouTube</b><small>@Luminote-music-jp</small></span>
+        <span class="s-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="sns-card xx" href="https://x.com/luminote_music" target="_blank" rel="noopener">
+        <span class="s-ic latin" aria-hidden="true">X</span>
+        <span class="s-tx"><b>X</b><small>@luminote_music</small></span>
+        <span class="s-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="sns-card vd" href="https://vocadb.net/Ar/201091" target="_blank" rel="noopener">
+        <span class="s-ic latin" aria-hidden="true">V</span>
+        <span class="s-tx"><b>VocaDB</b><small>曲と歌詞のデータベース</small></span>
+        <span class="s-arrow" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══ コンタクト ═══ -->
+  <section id="contact" class="frame contact reveal">
+    <h2 class="sec">お仕事のご連絡<span class="en">CONTACT</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <p class="en-line sec-en">For work inquiries, please contact by email.</p>
+    <div class="ways single">
+      <!-- 個人の方のご依頼（SKIMA）のカードは、受付をお休みしているあいだ外しています（第24版・2026-11-13）。戻すときは第23版のこの位置のカードを入れ直す。 -->
+      <div class="way mailbox">
+        <div class="w-ic" aria-hidden="true">✉︎</div>
+        <h3>企業の方・その他のご相談</h3>
+        <p>商用利用や継続のお仕事のご相談は、こちらのアドレスまでお願いいたします。</p>
+        <a class="mail" href="mailto:luminote.music.jp@gmail.com">luminote.music.jp@gmail.com</a>
+        <p class="small">内容によっては<br>お返事までお時間をいただく場合があります。</p>
+      </div>
+    </div>
+  
+  </section>
+
+  <!-- ═══ 謝辞 ═══ -->
+  <section id="thanks" class="frame reveal">
+    <h2 class="sec">謝辞<span class="en">SPECIAL THANKS</span></h2>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    <p class="thanks-lead">Luminoteのロゴ・ジャケット・このサイトでは、次のフォントを使わせていただいています。<br>制作者の皆さまに、心から感謝いたします。</p>
+    <h3 class="thanks-h">フォント<span class="latin">Fonts</span></h3>
+    <div class="font-grid">
+      <a class="font-card reveal" href="https://www.myfonts.com/collections/beyong-perfection-font-blessedprint" target="_blank" rel="noopener">
+        <span class="use">ロゴ</span>
+        <span class="smp img wm-sample" aria-hidden="true"></span>
+        <span class="fname">Beyong Perfection</span>
+        <span class="maker">Dmitrii Mikitenko（BlessedPrint）</span>
+      </a>
+      <a class="font-card reveal" href="https://booth.pm/ja/items/1799480" target="_blank" rel="noopener">
+        <span class="use">ジャケットの題字</span>
+        <span class="smp img paper" aria-hidden="true"><img src="img/thanks-font-sample.jpg" alt="" loading="lazy"></span>
+        <span class="fname">しょかき楷月</span>
+        <span class="maker">しょかき（ぼんのう堂）</span>
+      </a>
+      <a class="font-card reveal" href="https://fonts.google.com/specimen/Cormorant+Garamond" target="_blank" rel="noopener">
+        <span class="use">英字</span>
+        <span class="smp" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px">Luminote</span>
+        <span class="fname">Cormorant Garamond</span>
+        <span class="maker">Christian Thalmann</span>
+      </a>
+      <a class="font-card reveal" href="https://fonts.google.com/specimen/Shippori+Mincho+B1" target="_blank" rel="noopener">
+        <span class="use">見出し</span>
+        <span class="smp" style="font-family:'Shippori Mincho B1',serif;font-weight:700;font-size:24px">ルミノート</span>
+        <span class="fname">Shippori Mincho B1</span>
+        <span class="maker">FONTDASU</span>
+      </a>
+      <a class="font-card reveal" href="https://fonts.google.com/specimen/Zen+Kaku+Gothic+New" target="_blank" rel="noopener">
+        <span class="use">本文</span>
+        <span class="smp" style="font-family:'Zen Kaku Gothic New',sans-serif;font-weight:500;font-size:22px">ルミノート</span>
+        <span class="fname">Zen Kaku Gothic New</span>
+        <span class="maker">Yoshimichi Ohira</span>
+      </a>
+      <a class="font-card reveal" href="https://fonts.google.com/specimen/Klee+One" target="_blank" rel="noopener">
+        <span class="use">商品画像の題字</span>
+        <span class="smp" style="font-family:'Klee One',cursive;font-weight:600;font-size:24px">ルミノート</span>
+        <span class="fname">Klee One</span>
+        <span class="maker">Fontworks Inc.</span>
+      </a>
+      <a class="font-card reveal" href="https://fonts.google.com/noto/specimen/Noto+Music" target="_blank" rel="noopener">
+        <span class="use">音楽記号</span>
+        <span class="smp music" style="font-size:34px;letter-spacing:.2em">𝄞♪♫</span>
+        <span class="fname">Noto Music</span>
+        <span class="maker">Google</span>
+      </a>
+    </div>
+
+    <details class="fold kw-fold">
+      <summary>
+        <span class="ic" aria-hidden="true">❝</span>
+        <span class="tt">いただいた言葉<small>曲を聴いてくださったキュレーターの皆さまから、温かい言葉をいただきました。 ／ Kind words from the curators who listened</small></span>
+        <span class="chev" aria-hidden="true"></span>
+      </summary>
+      <div class="fold-body">
+        <div class="kw-grid">
+        <figure class="kw-card reveal">
+          <blockquote lang="en">This track is so delicate yet full of emotion and charm. I absolutely fell in love with the singer’s tone and voice.</blockquote>
+          <p class="tr">繊細なのに、感情と魅力にあふれた曲。歌い手の声の響きに、すっかり心を奪われました。</p>
+          <figcaption><b>Cold nights</b><span class="kind">プレイリスト</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+        <figure class="kw-card reveal">
+          <blockquote lang="en">Your music is impressive; the way you blend jazz and pop with violins makes the track a significant piece of music.</blockquote>
+          <p class="tr">見事な音楽です。ジャズとポップをバイオリンで溶け合わせる手法が、この曲を意義のある作品にしています。</p>
+          <figcaption><b>Voltaje Music</b><span class="kind">ラジオ・プレイリスト</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+        <figure class="kw-card reveal wide">
+          <blockquote lang="en">This track has a unique musical touch — very good ambiance and harmony. It's a deep track with lots of personality, we really love it!</blockquote>
+          <p class="tr">独特の音楽の手ざわりがあり、雰囲気も和声もとてもいい。個性あふれる深い曲で、本当に大好きです！</p>
+          <figcaption><b>Tal &amp; Tal</b><span class="kind">プレイリスト</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+        <figure class="kw-card reveal">
+          <blockquote lang="en">“Indigo Eclipse” sounds like an indie J-pop bittersweet reflection on memories that refuse to fade…</blockquote>
+          <p class="tr">「藍色エクリプス」は、消えようとしない記憶をほろ苦く振り返る、インディーの J-POP のように響きます。</p>
+          <figcaption><b>Oghamyst Music</b><span class="kind">プレイリスト</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+        <figure class="kw-card reveal">
+          <blockquote lang="es">Tiene todo para triunfar. La letra esta muy bien lograda.</blockquote>
+          <p class="tr">成功に必要なものを、すべて持っている。歌詞がとてもよくできている。</p>
+          <figcaption><b>Radio Click Digital</b><span class="kind">ラジオ・記事</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+        <figure class="kw-card reveal">
+          <blockquote lang="en">Love the song!</blockquote>
+          <p class="tr">この曲、大好き！</p>
+          <figcaption><b>HipHop Essentials</b><span class="kind">プレイリスト</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+        </figure>
+          <figure class="kw-card reveal">
+            <blockquote lang="en">Glad to have you on the show 😊</blockquote>
+            <p class="tr">番組にお迎えできて、うれしいです。</p>
+            <figcaption><b>Ejazz Radio</b><span class="kind">ラジオ</span><span class="song">藍色エクリプス feat. GUMI</span></figcaption>
+          </figure>
+        </div>
+        <p class="kw-thanks"><span class="ph">聴いてくださった皆さま、</span><span class="ph">温かいお言葉を</span><span class="ph">本当にありがとうございました。</span><br><span class="ph">この言葉に恥じないよう、</span><span class="ph">これからもよい曲を</span><span class="ph">作っていきます。</span><span class="en-line">To everyone who listened and shared these kind words — thank you so much.<br>I'll keep working to write music that lives up to them.</span><span class="sig">— Luminote</span></p>
+      </div>
+    </details>
+
+    <h3 class="thanks-h">紹介してくださった方々<span class="latin">Curators &amp; Media</span></h3>
+    <p class="thanks-sub">Luminote の曲を、ラジオやブログ、プレイリストで紹介してくださった皆さまです。心から感謝いたします。<span class="en-line">With heartfelt thanks to the curators and media who shared Luminote's music.</span></p>
+    <div class="font-grid cur-grid">
+      <a class="font-card cur-card reveal" href="http://radio.ejazzug.com/" target="_blank" rel="noopener">
+        <span class="use">ラジオ</span>
+        <span class="smp cur-name">Ejazz Radio</span>
+        <span class="fname">Ejazz Mix Show</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+      <a class="font-card cur-card reveal" href="https://parapop.net/luminote-indigo-eclipse-feat-gumi/" target="_blank" rel="noopener">
+        <span class="use">ブログ</span>
+        <span class="smp cur-name">ParaPOP</span>
+        <span class="fname">紹介記事 ・ Article</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+      <a class="font-card cur-card reveal" href="https://open.spotify.com/playlist/3bmn7jZodchlsoMfyB9G1Z" target="_blank" rel="noopener">
+        <span class="use">プレイリスト</span>
+        <span class="smp cur-name">Dreams studio</span>
+        <span class="fname">Tokyo to Paris: J-Pop x French Rap Vibes</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+      <a class="font-card cur-card reveal" href="https://open.spotify.com/playlist/1bRtpsjtEhPfS4vRZLk860" target="_blank" rel="noopener">
+        <span class="use">プレイリスト</span>
+        <span class="smp cur-name">HipHop Essentials</span>
+        <span class="fname">Saturday&#x27;s Rap Attack</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+      <a class="font-card cur-card reveal" href="https://open.spotify.com/playlist/49ui6vXc3umclgVgJsziRV" target="_blank" rel="noopener">
+        <span class="use">プレイリスト</span>
+        <span class="smp cur-name">oficialTUNE</span>
+        <span class="fname">TUNE Mood</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+      <a class="font-card cur-card reveal" href="https://open.spotify.com/playlist/507IxZmTFrf2oU7eY0PPUl" target="_blank" rel="noopener">
+        <span class="use">メディア</span>
+        <span class="smp cur-name">Zonagirante<wbr>.com</span>
+        <span class="fname">Sonidos novedosos</span>
+        <span class="songs"><i>藍色エクリプス</i></span>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="ornament" aria-hidden="true"><i></i></div>
+    © 2026 Luminote
+  </footer>
+</div>
+
+<script>
+/* =========================================================
+   ここだけ書き換えれば、予約・配信の表示が切り替わる
+   ========================================================= */
+var RELEASE = {
+  // 2曲目「レインボー★ユニコーン♪」（2026-11-21 配信）。配信日になったら dsp の url と listenUrl を入れる
+  presaveStart: '2026-11-11T00:00:00+09:00',   // この日から「配信します」の表示（予約リンクがあれば presaveUrl に入れる）
+  releaseAt:    '2026-11-21T00:00:00+09:00',   // 配信開始
+  presaveUrl:   '',                            // 予約リンク（配信開始後は使わない）
+  dsp: [
+    {name:'Spotify',       url:''},
+    {name:'Apple Music',   url:''},
+    {name:'YouTube Music', url:''},
+    {name:'Amazon Music',  url:''},
+    {name:'LINE MUSIC',    url:''}
+  ],
+  listenUrl: ''   // 「♪ 聴く」ボタンの行き先（LinkCore が出たら入れる）
+};
+/* 1曲目「藍色エクリプス」のリンク（2026-10-23 確認済み・控え）
+   Spotify https://open.spotify.com/track/5O37ql30HEgD7M9aozJ8ew
+   Apple Music https://music.apple.com/jp/album/indigo-eclipse-feat-gumi-single/6817728375?i=6817728399
+   YouTube Music https://music.youtube.com/watch?v=RNbt59LWqsg
+   Amazon Music https://music.amazon.co.jp/albums/B0HLLBKMJM?trackAsin=B0HLL6W3ZC
+   LINE MUSIC https://music.line.me/webapp/track/mt0000000027a9fa25
+   LinkCore https://linkco.re/EQE8z4m7 */
+
+(function(){
+  document.body.classList.remove('no-js');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var finePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  /* ---- 予約・配信の表示 ---- */
+  var tStart = new Date(RELEASE.presaveStart).getTime();
+  var tRel   = new Date(RELEASE.releaseAt).getTime();
+  var cta = document.getElementById('cta'), note = document.getElementById('rel-note'), dsp = document.getElementById('dsp');
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function dspHtml(){
+    return RELEASE.dsp.map(function(d){
+      return d.url ? '<a href="'+esc(d.url)+'" target="_blank" rel="noopener">'+esc(d.name)+'</a>' : '<span>'+esc(d.name)+'</span>';
+    }).join('') + (RELEASE.dsp.some(function(d){return d.url;}) ? '' : '<span>ほか各配信サービス</span>');
+  }
+  function renderCta(now){
+    if(now >= tRel){
+      cta.innerHTML = RELEASE.listenUrl
+        ? '<a class="btn" href="'+esc(RELEASE.listenUrl)+'" target="_blank" rel="noopener">♪ 聴く</a>'
+        : '<span class="btn wait">配信中です</span>';
+      note.textContent = '各配信サービスで配信中です。 / Out now on all major platforms.';
+    }else if(now >= tStart && RELEASE.presaveUrl){
+      cta.innerHTML = '<a class="btn" href="'+esc(RELEASE.presaveUrl)+'" target="_blank" rel="noopener">事前保存（予約）する</a>';
+      note.textContent = '配信日に、ライブラリへ自動で追加されます。';
+    }else if(now >= tStart){
+      cta.innerHTML = '';
+      note.textContent = 'Spotify・Apple Music・YouTube Music ほか、各配信サービスで配信します。 / Coming to Spotify, Apple Music, YouTube Music and more.';
+    }else{
+      cta.innerHTML = '<span class="btn wait">事前保存（予約）は 10月9日から</span>';
+      note.textContent = 'Spotify・Apple Music・YouTube Music ほか、各配信サービスで配信します。';
+    }
+    dsp.innerHTML = dspHtml();
+  }
+
+  /* ---- カウントダウン ---- */
+  var cells = {};
+  document.querySelectorAll('#countdown .n').forEach(function(el){cells[el.dataset.k]=el;});
+  var lastState = null;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function tick(){
+    var now = Date.now();
+    var state = now>=tRel ? 'rel' : (now>=tStart && RELEASE.presaveUrl ? 'pre' : 'wait');
+    if(state!==lastState){renderCta(now);lastState=state;}
+    var diff = Math.max(0, tRel-now);
+    if(diff===0){
+      document.getElementById('countdown').style.display='none';
+      document.getElementById('cd-label').style.display='none';
+      return;
+    }
+    var s=Math.floor(diff/1000), v={d:Math.floor(s/86400),h:Math.floor(s%86400/3600),m:Math.floor(s%3600/60),s:s%60};
+    for(var k in v){
+      var txt = k==='d' ? String(v[k]) : pad(v[k]);
+      if(cells[k].textContent!==txt){
+        cells[k].textContent=txt;
+        if(!reduce){cells[k].classList.remove('tick');void cells[k].offsetWidth;cells[k].classList.add('tick');}
+      }
+    }
+  }
+  tick(); setInterval(tick,1000);
+
+  /* ---- スクロールで現れる ---- */
+  var revs = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);} });
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+    revs.forEach(function(el){io.observe(el);});
+  }else{ revs.forEach(function(el){el.classList.add('in');}); }
+
+  /* ---- 区画の四隅に真鍮の角飾り ---- */
+  document.querySelectorAll('.frame').forEach(function(f){
+    ['tl','tr','bl','br'].forEach(function(p){var i=document.createElement('i');i.className='cn '+p;i.setAttribute('aria-hidden','true');f.appendChild(i);});
+  });
+
+  /* ---- ワードマークの光（画像をそのままマスクにする） ---- */
+  var wm=document.getElementById('wm'), sh=document.getElementById('wmshine');
+  if(wm && sh){ var u='url("'+wm.currentSrc+'")'; sh.style.webkitMaskImage=u; sh.style.maskImage=u; }
+  if(wm && sh && !wm.currentSrc){ wm.addEventListener('load',function(){var u='url("'+wm.currentSrc+'")';sh.style.webkitMaskImage=u;sh.style.maskImage=u;}); }
+
+  document.querySelectorAll('.wm-sample').forEach(function(el){ if(wm) el.style.backgroundImage='url("'+(wm.currentSrc||wm.src)+'")'; });
+
+  /* ---- ナビの出し入れ ---- */
+  var topbar=document.getElementById('topbar');
+  function onScrollNav(){ topbar.classList.toggle('show', window.scrollY > 420); }
+  window.addEventListener('scroll',onScrollNav,{passive:true}); onScrollNav();
+
+  if(reduce) return;
+
+  /* ---- 視差：スクロールとマウスで星と月がわずかに動く ---- */
+  var stars=document.querySelector('.starfield'), moon=document.getElementById('moon'), glow=document.getElementById('cglow');
+  var mx=0,my=0,cx=0,cy=0,sy=0, gx=-999, gy=-999;
+  if(finePointer){
+    window.addEventListener('pointermove',function(e){
+      mx=(e.clientX/innerWidth-.5); my=(e.clientY/innerHeight-.5);
+      gx=e.clientX; gy=e.clientY; glow.classList.add('on');
+    },{passive:true});
+    document.addEventListener('pointerleave',function(){glow.classList.remove('on');});
+  }
+  window.addEventListener('scroll',function(){sy=window.scrollY;},{passive:true});
+  function loop(){
+    cx+=(mx-cx)*.05; cy+=(my-cy)*.05;
+    var maxScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+    var p=sy/maxScroll;
+    if(stars) stars.style.transform='translate3d('+(-cx*26)+'px,'+(-cy*18 - p*innerHeight*0.16)+'px,0)';
+    if(moon)  moon.style.transform='translate3d('+(-cx*12)+'px,'+(-cy*8 - Math.min(sy*0.03,40))+'px,0)';
+    if(finePointer) glow.style.transform='translate3d('+gx+'px,'+gy+'px,0)';
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
+  /* ---- 光の粒（譜面灯の下を漂うほこりのような金色の粒） ---- */
+  var cv=document.getElementById('dust'), ctx=cv.getContext('2d'), W,H,DPR, parts=[];
+  var COLORS=['243,217,162','168,194,232','239,232,218','215,160,180','154,134,207'];
+  function size(){
+    DPR=Math.min(window.devicePixelRatio||1,2); W=cv.clientWidth; H=cv.clientHeight;
+    cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+    var n = W<700 ? 22 : 46;
+    parts=[]; for(var i=0;i<n;i++) parts.push(mk(true));
+  }
+  function mk(init){
+    return {x:Math.random()*W, y:init?Math.random()*H:H+10, r:Math.random()*1.6+.5,
+      vy:-(Math.random()*.25+.08), vx:(Math.random()-.5)*.12, ph:Math.random()*6.28, sp:Math.random()*.02+.006,
+      c:COLORS[Math.random()<.55?0:Math.floor(Math.random()*COLORS.length)]};
+  }
+  var running=true;
+  document.addEventListener('visibilitychange',function(){running=!document.hidden; if(running) requestAnimationFrame(draw);});
+  function draw(){
+    if(!running) return;
+    ctx.clearRect(0,0,W,H);
+    for(var i=0;i<parts.length;i++){
+      var q=parts[i]; q.ph+=q.sp; q.x+=q.vx+Math.sin(q.ph)*.15; q.y+=q.vy;
+      if(q.y<-10||q.x<-10||q.x>W+10){parts[i]=mk(false);continue;}
+      var a=.35+.45*Math.sin(q.ph*1.7);
+      var g=ctx.createRadialGradient(q.x,q.y,0,q.x,q.y,q.r*5);
+      g.addColorStop(0,'rgba('+q.c+','+a+')'); g.addColorStop(1,'rgba('+q.c+',0)');
+      ctx.fillStyle=g; ctx.beginPath(); ctx.arc(q.x,q.y,q.r*5,0,6.283); ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  size(); window.addEventListener('resize',size); requestAnimationFrame(draw);
+
+  /* ---- 流れ星（ときどき一筋） ---- */
+  var sky=document.querySelector('.sky');
+  function shoot(){
+    if(!document.hidden){
+      var el=document.createElement('div'); el.className='shoot';
+      var x=innerWidth*(.35+Math.random()*.6), y=innerHeight*(Math.random()*.35);
+      var ang=150+Math.random()*18, dist=260+Math.random()*220, rad=ang*Math.PI/180;
+      el.style.left=x+'px'; el.style.top=y+'px';
+      el.style.setProperty('--ang',ang+'deg');
+      el.style.setProperty('--dx',(Math.cos(rad)*dist)+'px');
+      el.style.setProperty('--dy',(Math.sin(rad)*dist)+'px');
+      sky.appendChild(el); setTimeout(function(){el.remove();},1700);
+    }
+    setTimeout(shoot, 6000+Math.random()*9000);
+  }
+  setTimeout(shoot, 2500);
+})();
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('profile'); if(!sec) return;
+  var btns=sec.querySelectorAll('.lang-switch button');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var en=b.getAttribute('data-lang')==='en';
+    sec.classList.toggle('is-en',en);
+    btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+  }); });
+})();
+</script>
+<script>
+(function(){
+  var box=document.querySelector('#lyrics .lyrics'); if(!box) return;
+  var btns=box.querySelectorAll('.ly-switch button');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var l=b.getAttribute('data-lang');
+    box.classList.toggle('is-ro',l==='ro'); box.classList.toggle('is-en',l==='en');
+    btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+  }); });
+})();
+</script>
+<script>
+(function(){
+  var sec=document.getElementById('vocals'); if(!sec) return;
+  var btns=sec.querySelectorAll('.lang-switch button');
+  btns.forEach(function(b){ b.addEventListener('click',function(){
+    var en=b.getAttribute('data-lang')==='en';
+    sec.classList.toggle('is-en',en);
+    btns.forEach(function(x){ var on=(x===b); x.classList.toggle('on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+  }); });
+})();
+</script>
+<script>
+/* ---- 2026-11 追加：押されたものを GoatCounter に送る（外へのリンク・メール・言語の切り替え・畳みを開いた回数） ---- */
+(function(){
+  function gc(path,title){ try{ if(window.goatcounter && window.goatcounter.count){ window.goatcounter.count({path:path, title:title||path, event:true}); } }catch(e){} }
+  document.addEventListener('click',function(e){
+    var t=e.target; if(!t || !t.closest) return;
+    var a=t.closest('a[href]');
+    if(a){
+      var h=a.getAttribute('href')||'';
+      if(/^mailto:/i.test(h)){ gc('link-mail','メール'); }
+      else if(/^https?:/i.test(h)){
+        try{ var u=new URL(h, location.href); if(u.hostname!==location.hostname){ gc('link-'+u.hostname, (a.textContent||'').replace(/\s+/g,' ').trim().slice(0,80) || u.hostname); } }catch(_){}
+      }
+      return;
+    }
+    var b=t.closest('.lang-switch button');
+    if(b){ var s=b.closest('section'); gc('lang-'+(s?s.id:'x')+'-'+b.getAttribute('data-lang')); }
+  });
+  document.querySelectorAll('details').forEach(function(d){
+    d.addEventListener('toggle',function(){ if(d.open){ var s=d.closest('section'); gc('open-'+(s?s.id:'x')); } });
+  });
+})();
+</script>
+</body>
+</html>
