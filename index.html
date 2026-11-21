@@ -620,6 +620,8 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 #lyrics .ly-go small{display:block;font-family:'Zen Kaku Gothic New',sans-serif;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;margin-top:2px;}
 #lyrics .ly-go .ly-arrow{color:var(--brass);transition:transform .3s;}
 #lyrics .ly-go:hover .ly-arrow{transform:translateX(4px);}
+/* ---- 2026-11 追加：トップの歌詞のカードが 2 枚になったときの間隔 ---- */
+#lyrics .ly-go + .ly-go{margin-top:12px;}
 .sns-card.vd{grid-column:1 / -1;max-width:420px;width:100%;justify-self:center;}
 .sns-card.vd .s-ic{color:var(--wisteria);background:rgba(154,134,207,.08);box-shadow:0 0 20px rgba(154,134,207,.22);font-size:18px;}
 /* ---- 2026-11 追加：プロフィールの日本語／English 切り替え ---- */
@@ -748,7 +750,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
   },
   {
    "@type": "MusicRecording",
-   "@id": "https://luminote-music.com/#rainbow-unicorn",
+   "@id": "https://luminote-music.com/rainbow-unicorn/#recording",
    "name": "レインボー★ユニコーン♪",
    "alternateName": [
     "Rainbow Unicorn"
@@ -760,7 +762,7 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
    "datePublished": "2026-11-21",
    "duration": "PT4M40S",
    "inLanguage": "ja",
-   "url": "https://luminote-music.com/",
+   "url": "https://luminote-music.com/rainbow-unicorn/",
    "sameAs": [
     "https://open.spotify.com/track/6tT9yYeVz3OPFnPnu45w9S",
     "https://music.apple.com/jp/album/6832493232?i=6832493478",
@@ -947,6 +949,11 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
 
   <!-- ═══ 歌詞（本文は曲のページへ移した・2026-11） ═══ -->
   <section id="lyrics" class="reveal">
+    <a class="ly-go" href="/rainbow-unicorn/#lyrics">
+      <span class="ic music" aria-hidden="true">♪</span>
+      <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small style="word-break:keep-all">レインボー★ユニコーン♪ (feat. GUMI &amp; 小春六花)　／　<wbr>日本語</small></span>
+      <span class="ly-arrow" aria-hidden="true">→</span>
+    </a>
     <a class="ly-go" href="/indigo-eclipse/#lyrics">
       <span class="ic music" aria-hidden="true">♪</span>
       <span class="tt">歌詞 <span class="tt-en">Lyrics</span><small style="word-break:keep-all">藍色エクリプス (feat. GUMI)　／　<wbr>日本語・Romaji・English</small></span>
@@ -969,9 +976,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
         <div class="meta">Indigo Eclipse ／ 2026.10.23 配信</div>
       </div>
       <div class="slot reveal d2">
-        <div class="cover"><img src="img/rainbow-unicorn.jpg" alt="レインボー★ユニコーン♪" loading="lazy"></div>
+        <a href="/rainbow-unicorn/" class="cover" style="display:block"><img src="img/rainbow-unicorn.jpg" alt="レインボー★ユニコーン♪（曲のページへ）" loading="lazy"></a>
         <div class="no">No. 02</div>
-        <h3>レインボー★ユニコーン♪</h3>
+        <h3><a href="/rainbow-unicorn/" style="color:inherit;text-decoration:none">レインボー★ユニコーン♪</a></h3>
         <div class="meta">Rainbow Unicorn ／ 2026.11.21 配信</div>
       </div>
       <div class="slot reveal d3">
