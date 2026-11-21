@@ -608,6 +608,9 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
   .listen .player iframe{height:352px;}
   .rel-next{justify-content:center;}
 }
+/* ---- 2026-11-21 追加：LISTEN NOW は曲ごとの再生欄を新しい順に並べる（アーティストの埋め込みは「人気曲」だけが出て、新曲がすぐには載らないため） ---- */
+.listen .player.player-track + .player.player-track{margin-top:12px;}
+.listen .player.player-track iframe{height:152px;}
 /* ---- 2026-11 追加：「Spotify アプリで聴く」ボタン（埋め込みは未ログインだと 30 秒の試聴になり、再生回数に入らないため） ---- */
 .listen .listen-app{margin-top:20px;}
 .listen .la-note{margin-top:10px;font-size:12.5px;color:var(--ivory-dim);letter-spacing:.04em;word-break:keep-all;}
@@ -875,8 +878,11 @@ a:focus-visible,summary:focus-visible{outline:2px solid var(--brass);outline-off
   <!-- ═══ いま聴ける曲（Spotify） ═══ -->
   <section id="listen" class="listen reveal" aria-label="いま聴ける曲">
     <div class="eyebrow">LISTEN NOW</div>
-    <div class="player">
-      <iframe title="Spotify で Luminote を聴く" src="https://open.spotify.com/embed/artist/327m28B4SJFugxzg1RSynP?utm_source=generator&amp;theme=0" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <div class="player player-track">
+      <iframe title="Spotify で レインボー★ユニコーン♪ を聴く" src="https://open.spotify.com/embed/track/6tT9yYeVz3OPFnPnu45w9S?utm_source=generator&amp;theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+    <div class="player player-track">
+      <iframe title="Spotify で 藍色エクリプス を聴く" src="https://open.spotify.com/embed/track/5O37ql30HEgD7M9aozJ8ew?utm_source=generator&amp;theme=0" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div class="listen-app">
       <a class="btn" href="https://open.spotify.com/artist/327m28B4SJFugxzg1RSynP" target="_blank" rel="noopener">♪ Spotify アプリで聴く</a>
